@@ -39,11 +39,18 @@ body{
     margin-bottom: 20px;
 }
 
-.container button{
-    color: #fff;
+#btnEnviarLogin{
+    color: #ffffff;
+    background-color: #1f234d;
+    font-size: 20px;
     width: 70%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #1f234d;
     margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#btnEnviarLogin:hover{
+    background-color: #121422;
 }

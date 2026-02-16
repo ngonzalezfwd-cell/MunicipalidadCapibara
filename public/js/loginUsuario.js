@@ -7,9 +7,9 @@ const btnLogin = document.getElementById("btnEnviarLogin");
 
 btnLogin.addEventListener("click", async function () {
 
-    const respuesta = await getUsuarios(); 
+    const respuesta = await getUsuarios();
     console.log(respuesta);
-    
+
 
     const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
 
@@ -23,7 +23,7 @@ btnLogin.addEventListener("click", async function () {
         });
         return;
 
-    }else if (usuarioInicio) {
+    } else if (usuarioInicio) {
 
         Swal.fire({
             title: "¡Login correcto!",
@@ -33,8 +33,9 @@ btnLogin.addEventListener("click", async function () {
         });
 
         window.location.href = "../pages/home.html";
-        
+
     } else {
+
         Swal.fire({
             title: "Error",
             text: "Correo o contraseña incorrectas, por favor intente de nuevo",
@@ -44,8 +45,8 @@ btnLogin.addEventListener("click", async function () {
     }
 
 
-    correo.value=""
-    contraseña.value=""
+    correo.value = ""
+    contraseña.value = ""
 
 });
 
