@@ -43,3 +43,29 @@ async function postUsuarios(usuario) {
 }
 
 export {postUsuarios} 
+
+//DELETE
+
+async function deleteUsuarios(id) {
+    try {
+        
+        const response  = await fetch("http://localhost:3001/usuarios" + id,{
+            method: "DELETE",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(id) 
+        })
+
+        const userData = await response.json();
+
+        return userData;
+
+    } catch (error) {
+
+        console.error("Error al Eliminar los usuarios", error)
+
+    }
+}
+
+export {deleteUsuarios}  
