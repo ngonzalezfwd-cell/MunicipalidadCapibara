@@ -10,6 +10,16 @@ btnLogin.addEventListener("click", async function () {
     const respuesta = await getUsuarios();
     console.log(respuesta);
 
+    // Validar que la respuesta sea válida
+    if (!respuesta || !Array.isArray(respuesta)) {
+        Swal.fire({
+            title: "Error",
+            text: "No se pudo conectar con el servidor",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
 
     const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
 

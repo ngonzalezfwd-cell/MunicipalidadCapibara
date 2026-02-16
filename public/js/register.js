@@ -1,37 +1,96 @@
-import {getUsuarios, postUsuarios} from "../services/serviceUsuarios.js";
+import {postUsuarios} from "../services/serviceUsuarios.js";
 
-const nombreUsuario = document.getElementById("nombreUsuario");
-const correoUsuario = document.getElementById("correoUsuario");
-const contraseñaUsuario = document.getElementById("contraseñaUsuario");
-const cedulaUsuario = document.getElementById("cedulaUsuario");
-const btnEnviarUsuario = document.getElementById("btnEnviarUsuario");
+const nombre = document.getElementById("nombreUsuario");
+const correo = document.getElementById("correoUsuario");
+const contraseña = document.getElementById("contraseñaUsuario");
+const cedula = document.getElementById("cedulaUsuario");
+const btnEnviar = document.getElementById("btnEnviarUsuario");
 
 
-btnEnviarUsuario.addEventListener("click", async function() {
+btnEnviar.addEventListener("click", async function() {
     
-    const usuario ={
+    if (nombre.value.trim() === "" || correo.value.trim() === "" || contraseña.value.trim() === "" || cedula.value.trim() === "") {
 
-        nombreUsuario: nombreUsuario.value,
-        correoUsuario: correoUsuario.value,
-        contraseñaUsuario: contraseñaUsuario.value,
-        cedulaUsuario: cedulaUsuario.value
-
+        Swal.fire({
+            title: "Error",
+            text: "Por favor, complete todos los campos",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
     }
-    
-    //COMENTAR DSP
-    let usuarioGuardado = await postUsuarios(usuario)
-    console.log(usuarioGuardado)
 
-    alert("creaste el usuario")//CREAR EL SWEET ALERT
+    if (!correo.value.includes("@") || !correo.value.includes(".")) {
 
-    window.location.href = "../pages/login.html"; //
+        Swal.fire({
+            title: "Error",
+            text: "Por favor, coloque un correo válido",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
 
-    //DSP de crear el usuario los datos se quedan en blanco
-    nombreUsuario.value= ""
-    correoUsuario.value=""
-    contraseñaUsuario.value=""
-    cedulaUsuario.value=""
-})
+   
+    if (cedula.value.trim().length !== 9) {
+
+        Swal.fire({
+            title: "Error",
+            text: "Coloque una cédula válida (9 dígitos)",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
+
+    if (contraseña.value.length < 8) {
+
+        Swal.fire({
+            title: "Error",
+            text: "La contraseña debe tener al menos 8 caracteres",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
+
+
+    const usuarioCrear = {
+        nombreUsuario: nombre.value,
+        correoUsuario: correo.value,
+        contraseñaUsuario: contraseña.value,
+        cedulaUsuario: cedula.value
+    };
+
+    const Respuesta = await postUsuarios(usuarioCrear);
+
+
+    if (Respuesta) {
+        Swal.fire({
+            title: "¡Usuario creado!",
+            text: "¡Bienvenido " + usuarioCrear.nombreUsuario + "!",
+            icon: "success",
+            confirmButtonText: "Aceptar"
+        });
+
+        window.location.href = "../pages/login.html";
+      
+        nombre.value = "";
+        correo.value = "";
+        contraseña.value = "";
+        cedula.value = "";
+
+    } else {
+        Swal.fire({
+            
+            title: "Error",
+            text: "No se pudo crear el usuario. Verifique la conexión con el servidor.",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+    }
+});
+
 
 
 //Trae la funcion de serviceUsuarios GET

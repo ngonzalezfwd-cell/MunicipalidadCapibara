@@ -20,6 +20,11 @@ body{
     text-align: center;
 }
 
+.container label{
+    color: #282b50;
+    margin-bottom: 0px;
+}  
+
 .container h1{
 
     margin-bottom: 60px;
@@ -27,7 +32,6 @@ body{
 
 .container h3{
     color: #282b50;
-    margin-bottom: 20px;
 }
 
 .container input{
@@ -36,10 +40,9 @@ body{
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #1f234d;
-    margin-bottom: 20px;
 }
 
-#btnEnviarLogin{
+#btnEnviarLogin, #btnEnviarUsuario{
     color: #ffffff;
     background-color: #1f234d;
     font-size: 20px;

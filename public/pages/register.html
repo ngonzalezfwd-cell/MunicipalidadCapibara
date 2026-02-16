@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resgistrarme</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../styles/login_registrer.css">
 </head>
+
 <body>
 
-    <h3>Nombre Completo</h3>
-    <input type="text" id="nombreUsuario">
-    <h3>Correo Electronico</h3>
-    <input type="text" id="correoUsuario">
-    <h3>Contraseña</h3>
-    <input type="text" id="contraseñaUsuario">
-    <h3>Numero de cedula</h3>
-    <input type="text" id="cedulaUsuario">
+    <div class="container">
 
-    <button id="btnEnviarUsuario">Registrarse</button>
+        <h1>Resgistrate</h1>
 
-    <p>¿Ya tienes cuenta? <a href="../pages/login.html">Inicia Sesión</a></p>
+        <h3>Nombre Completo</h3>
+        <input type="text" id="nombreUsuario">
+        <h3>Correo Electronico</h3>
+        <input type="text" id="correoUsuario">
+        <h3>Contraseña</h3>
+        <input type="text" id="contraseñaUsuario">
+        <h3>Numero de cedula</h3>
+        <input type="text" id="cedulaUsuario"><br><br><br>
 
-<script type="module" src="../js/functions.js"></script>
+        <button id="btnEnviarUsuario">Registrarse</button>
+
+        <p>¿Ya tienes cuenta? <a href="../pages/login.html">Inicia Sesión</a></p>
+
+    </div>
+
+    <script type="module" src="../js/register.js"></script>
 </body>
+
 </html>
