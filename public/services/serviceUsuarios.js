@@ -43,3 +43,32 @@ async function postUsuarios(usuario) {
 }
 
 export {postUsuarios} 
+
+
+//PUT
+
+async function putUsuarios(id, usuario) {
+
+    try {
+        
+        const response  = await fetch("http://localhost:3001/usuarios" + id,{
+            method: "PUT",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            
+            body:JSON.stringify(usuario) 
+        })
+
+        const userData = await response.json();
+
+        return userData;
+
+    } catch (error) {
+
+        console.error("Error al obtener los usuarios", error)
+
+    }
+}
+
+export {putUsuarios} 

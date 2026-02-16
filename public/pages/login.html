@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
+
+    <link rel="stylesheet" href="../styles/login_registrer.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
+
 <body>
     
-    <h3>Correo Electronico</h3>
-    <input type="text" id="correoUsuario">
-    <h3>Contraseña</h3>
-    <input type="text" id="contraseñaUsuario">
+    <div class="container">
+
+        <h1>Iniciar Sesión</h1>
+
+        <h3>Correo Electronico</h3>
+        <input type="text" id="correoUsuario">
+        <h3>Contraseña</h3>
+        <input type="text" id="contraseñaUsuario"><br><br>
     
 
-    <button id="btnEnviarLogin">ENVIAR</button>
+        <button id="btnEnviarLogin">Iniciar Sesión</button>
 
-<script type="module" src="../js/loginUsuario.js"></script>
+        <p>¿No tienes cuenta? <a href="../pages/register.html">Registrate</a></p>
+
+    </div>
+
+    <script type="module" src="../js/loginUsuario.js"></script>
 </body>
+
 </html>
