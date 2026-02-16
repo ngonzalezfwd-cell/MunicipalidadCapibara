@@ -44,6 +44,19 @@ async function postUsuarios(usuario) {
 
 export {postUsuarios} 
 
+<<<<<<< RamadeAndres
+//DELETE
+
+async function deleteUsuarios(id) {
+    try {
+        
+        const response  = await fetch("http://localhost:3001/usuarios" + id,{
+            method: "DELETE",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(id) 
+=======
 
 //PUT
 
@@ -58,6 +71,7 @@ async function putUsuarios(id, usuario) {
             },
             
             body:JSON.stringify(usuario) 
+>>>>>>> main
         })
 
         const userData = await response.json();
@@ -66,9 +80,18 @@ async function putUsuarios(id, usuario) {
 
     } catch (error) {
 
+<<<<<<< RamadeAndres
+        console.error("Error al Eliminar los usuarios", error)
+
+    }
+}
+
+export {deleteUsuarios}  
+=======
         console.error("Error al obtener los usuarios", error)
 
     }
 }
 
 export {putUsuarios} 
+>>>>>>> main
