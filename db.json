@@ -29,102 +29,11 @@
       "cedulaUsuario": "1856857"
     },
     {
-      "id": "4ba2",
       "nombreUsuario": "Naomy",
       "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "119960697"
-    },
-    {
-      "id": "324b",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111"
-    },
-    {
-      "id": "cc3c",
-      "nombreUsuario": "",
-      "correoUsuario": "",
-      "contraseñaUsuario": "",
-      "cedulaUsuario": ""
-    },
-    {
-      "id": "26eb",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": ""
-    },
-    {
-      "id": "47db",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111111111"
-    },
-    {
-      "id": "2f7a",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111111111"
-    },
-    {
-      "id": "6f08",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111111111"
-    },
-    {
-      "id": "cf58",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111111111"
-    },
-    {
-      "id": "f34f",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111111111"
-    },
-    {
-      "id": "ad45",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": ""
-    },
-    {
-      "id": "c6b9",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "119960697"
-    },
-    {
-      "id": "0771",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111"
-    },
-    {
-      "id": "5c15",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111"
-    },
-    {
-      "id": "9571",
-      "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "111"
+      "cedulaUsuario": "119960699",
+      "contraseñaUsuario": "12345678",
+      "id": "86aa"
     }
   ],
   "reportes": []

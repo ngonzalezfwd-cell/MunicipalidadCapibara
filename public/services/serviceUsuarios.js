@@ -2,6 +2,7 @@
 //GET 
 
 async function getUsuarios() {
+
     try {
 
         const response = await fetch("http://localhost:3001/usuarios")
@@ -44,12 +45,38 @@ async function postUsuarios(usuario) {
 
 export { postUsuarios }
 
+//PUT
+
+async function putUsuarios(id, usuario) {
+    try {
+
+        const response = await fetch("http://localhost:3001/usuarios/" + id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        })
+
+        const userData = await response.json();
+
+        return userData;
+
+    } catch (error) {
+
+        console.error("Error al actualizar los usuarios", error)
+
+    }
+}
+
+export { putUsuarios }
+
 //DELETE
 
 async function deleteUsuarios(id) {
     try {
 
-        const response = await fetch("http://localhost:3001/usuarios" + id, {
+        const response = await fetch("http://localhost:3001/usuarios/" + id, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

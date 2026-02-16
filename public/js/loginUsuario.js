@@ -8,10 +8,20 @@ const btnLogin = document.getElementById("btnEnviarLogin");
 btnLogin.addEventListener("click", async function () {
 
     const respuesta = await getUsuarios();
-    console.log(respuesta);
+    
+    const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
 
-    // Validar que la respuesta sea válida
-    if (!respuesta || !Array.isArray(respuesta)) {
+    if (correo.value.trim() === "" || contraseña.value.trim() === "") {
+        Swal.fire({
+            title: "Error",
+            text: "Por favor, complete todos los campos",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
+
+    if (!respuesta) {
         Swal.fire({
             title: "Error",
             text: "No se pudo conectar con el servidor",
@@ -20,32 +30,35 @@ btnLogin.addEventListener("click", async function () {
         });
         return;
     }
-
-    const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
-
-    if (correo.value.trim() === "" || contraseña.value.trim() === "") {
+    if (correo.value === "gnaomy276@gmail.com" && contraseña.value === "12345678") {
 
         Swal.fire({
-            title: "Error",
-            text: "Por favor, complete todos los campos",
-            icon: "error",
+            title: "¡Bienvenido " + usuarioInicio.nombreUsuario + "!",
+            text: "Entraste como Admin",
+            icon: "success",
             confirmButtonText: "Aceptar"
+        }).then(() => {
+            window.location.href = "../pages/admin.html";
         });
         return;
+    }
 
-    } else if (usuarioInicio) {
+    if (usuarioInicio) {
 
         Swal.fire({
             title: "¡Login correcto!",
             text: "Bienvenido " + usuarioInicio.nombreUsuario,
             icon: "success",
             confirmButtonText: "Aceptar"
+
+        }).then(() => {
+            window.location.href = "../pages/home.html";
         });
 
-        window.location.href = "../pages/home.html";
+        
 
     } else {
-
+        
         Swal.fire({
             title: "Error",
             text: "Correo o contraseña incorrectas, por favor intente de nuevo",
@@ -54,10 +67,8 @@ btnLogin.addEventListener("click", async function () {
         });
     }
 
-
-    correo.value = ""
-    contraseña.value = ""
-
+    contraseña.value = "";
+    correo.value = "";
 });
 
 
