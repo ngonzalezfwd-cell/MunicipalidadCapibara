@@ -27,6 +27,13 @@
       "correoUsuario": "jr@gmail.com",
       "contraseñaUsuario": "1234567",
       "cedulaUsuario": "1856857"
+    },
+    {
+      "id": "4ba2",
+      "nombreUsuario": "Naomy",
+      "correoUsuario": "gnaomy276@gmail.com",
+      "contraseñaUsuario": "123456",
+      "cedulaUsuario": "119960697"
     }
   ],
   "reportes": []
