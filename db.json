@@ -1,0 +1,33 @@
+{
+  "usuarios": [
+    {
+      "id": "23c0",
+      "nombreUsuario": "Keylor",
+      "correoUsuario": "keylor@gmail.com",
+      "contraseñaUsuario": "123456",
+      "cedulaUsuario": "12345678"
+    },
+    {
+      "id": "f58a",
+      "nombreUsuario": "Keylor",
+      "correoUsuario": "keylor@gmail.com",
+      "contraseñaUsuario": "123456",
+      "cedulaUsuario": "12345678"
+    },
+    {
+      "id": "196b",
+      "nombreUsuario": "David Barrantes Montero",
+      "correoUsuario": "davidcr@icloud.com",
+      "contraseñaUsuario": "keylor15david.",
+      "cedulaUsuario": "604910942"
+    },
+    {
+      "id": "b333",
+      "nombreUsuario": "Carlos Andres JR",
+      "correoUsuario": "jr@gmail.com",
+      "contraseñaUsuario": "1234567",
+      "cedulaUsuario": "1856857"
+    }
+  ],
+  "reportes": []
+}

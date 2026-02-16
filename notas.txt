@@ -1,0 +1,36 @@
+Las funciones asincronas estan a la espera de una promesa 
+
+En la carpeta services ese servicio se va encargar de hacer peticiones
+
+obtenerUsuarios: va obtener todos los usuarios del endpoint 
+
+Para instalar el db.json es: npm i json-server 
+
+Para levantar el jsonServer es npx json-server --watch db.json --port 3001
+
+Para levantar el express es npm start
+
+La ruta de db.json es 3001 y express 3000
+
+Se le tiene que decir el metodo que va usar para el get no hace falta porque por default ya viene get
+
+body:JSON.stringify(usuario) AQUI PASO el usuario al servidor para hacer la conversion a JSON
+
+FALTA LOS METODOS DELETE y EL OTRO HACER CON EL VIDEO DE BARRY
+
+
+
+davidbarrantesmontero@Davids-MacBook-Air Proyecto Municipalidad.js % npm i json-server
+
+added 43 packages, and audited 109 packages in 5s
+
+37 packages are looking for funding
+  run `npm fund` for details
+
+1 low severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+davidbarrantesmontero@Davids-MacBook-Air Proyecto Municipalidad.js % 
