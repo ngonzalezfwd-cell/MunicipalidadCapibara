@@ -165,6 +165,27 @@ window.eliminarUsuario = async (id) => {
     }
 };
 
+// --- CERRAR SESION ---
+
+const cerrarSesionBtn = document.getElementById("cerrarSesionBtn");
+
+cerrarSesionBtn.addEventListener("click", async function () {
+    
+    const result = await Swal.fire({
+        title: '¿Estás seguro de cerrar sesión?',
+        text: "Puedes iniciar sesión de nuevo si lo deseas.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, cerrar sesión'
+    });
+    
+    if (result.isConfirmed) {
+        window.location.href = "login.html";
+    }
+});
+
 // Inicio
 usuariosEnPantalla();
 
