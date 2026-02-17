@@ -1,0 +1,194 @@
+/* usuarioReporte.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #004e92;
+    --primary-dark: #000428;
+    --accent: #00d2ff;
+    --text-light: #f4f7f6;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #004e92, #000428, #2a5298, #00d2ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+nav {
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass);
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: white;
+    color: var(--primary-dark);
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.report-box {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 600px;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.report-box h1 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.report-box p {
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(0, 210, 255, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 78, 146, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Floating decor */
+.floating-shapes div {
+    position: absolute;
+    background: var(--glass);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.floating-shapes div:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+}
+
+.floating-shapes div:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+}
+
+.floating-shapes div:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    top: 40%;
+    right: 10%;
+}

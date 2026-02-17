@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Reporte - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/usuarioReporte.css">
+    <script src="../js/authGuard.js"></script>
+</head>
+
+<body>
+    <div class="floating-shapes">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <nav>
+        <a href="home.html" class="logo">
+            <i class="fa-solid fa-building-columns"></i> MuniCapibara
+        </a>
+        <div class="nav-links">
+            <a href="home.html" class="nav-btn">Inicio</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="report-box">
+            <h1><i class="fa-solid fa-file-signature"></i> Nuevo Reporte Ciudadano</h1>
+            <p>Tu participación es clave para mejorar nuestra comunidad. Completa el formulario para enviarnos tu
+                reporte.</p>
+
+            <form id="formUsuarioReporte">
+                <div class="form-group">
+                    <label for="tipoReporte"><i class="fa-solid fa-list-ul"></i> Tipo de Reporte</label>
+                    <select id="tipoReporte" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Reporte General">Reporte General / Incidencia</option>
+                        <option value="Proyecto Vial">Huso de Vías / Proyecto Vial</option>
+                        <option value="Servicio Público">Servicio Público (Basura, Alumbrado, etc.)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tituloReporte"><i class="fa-solid fa-heading"></i> Título Corto</label>
+                    <input type="text" id="tituloReporte" placeholder="Ej: Bache en Calle Central" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcionReporte"><i class="fa-solid fa-align-left"></i> Descripción del
+                        Problema</label>
+                    <textarea id="descripcionReporte" rows="4"
+                        placeholder="Describe los detalles de lo que está sucediendo..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="ubicacionReporte"><i class="fa-solid fa-location-dot"></i> Ubicación Exacta</label>
+                    <input type="text" id="ubicacionReporte" placeholder="Dirección, puntos de referencia, etc."
+                        required>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar Reporte
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/usuarioReporte.js"></script>
+</body>
+
+</html>

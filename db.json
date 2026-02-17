@@ -1,57 +1,67 @@
 {
   "usuarios": [
     {
-      "id": "23c0",
-      "nombreUsuario": "Keylor",
-      "correoUsuario": "keylor@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "12345678"
-    },
-    {
-      "id": "196b",
-      "nombreUsuario": "David Barrantes Montero",
-      "correoUsuario": "davidcr@icloud.com",
-      "contraseñaUsuario": "keylor15david.",
-      "cedulaUsuario": "604910942"
-    },
-    {
-      "id": "b333",
-      "nombreUsuario": "Carlos Andres JR",
-      "correoUsuario": "jr@gmail.com",
-      "contraseñaUsuario": "1234567",
-      "cedulaUsuario": "1856857"
-    },
-    {
+      "id": "d58a",
       "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "cedulaUsuario": "119960699",
+      "correoUsuario": "ngonzalezfwd@gmail.com",
       "contraseñaUsuario": "12345678",
-      "id": "86aa"
+      "cedulaUsuario": "119960697"
     },
     {
-      "id": "ab08",
-      "nombreUsuario": "Keylor PRUEBA",
-      "correoUsuario": "keylillor@gmail.com",
-      "contraseñaUsuario": "keylor14david",
-      "cedulaUsuario": "604910942"
+      "id": "478e",
+      "nombreUsuario": "Naomy",
+      "correoUsuario": "ngonzalezfwd@gmail.com",
+      "contraseñaUsuario": "12345678",
+      "cedulaUsuario": "119960697"
+    },
+    {
+      "nombreUsuario": "juan",
+      "correoUsuario": "purog@mail.com",
+      "cedulaUsuario": "504584542",
+      "contraseñaUsuario": "12345678",
+      "id": "6e30"
     }
   ],
-  "proyectosViales": [
+
+
+
+  "reportes": [
     {
-      "nombreProyecto": "Puente",
-      "DescripcionProyecto": "Rio NIro",
-      "PresupuestoProyecto": "100000",
-      "FechaProyecto": "10/2/24",
-      "EstadoProyecto": "lISTO",
-      "id": "9cf8"
+      "id": "5f70",
+      "titulo": "bache en calle central",
+      "tipo": "Reporte General",
+      "descripcion": "si",
+      "ubicacion": "puntarenas",
+      "estado": "En Proceso",
+      "fecha": "17/2/2026"
     },
     {
-      "id": "e574",
-      "nombreProyecto": "Acera",
-      "DescripcionProyecto": "Hacer",
-      "PresupuestoProyecto": "10000",
-      "FechaProyecto": "10/02/25",
-      "EstadoProyecto": "Pendiente"
+      "id": "7bcf",
+      "titulo": "bache en calle central",
+      "tipo": "Proyecto Vial",
+      "descripcion": "umhhmhy",
+      "ubicacion": "puntarenas",
+      "estado": "Resuelto",
+      "fecha": "17/2/2026"
+    },
+    {
+      "id": "fb7c",
+      "titulo": "se cayo el porton",
+      "tipo": "Servicio Público",
+      "descripcion": "fjjfjfjfjfjfjfjfjfjf",
+      "ubicacion": "puntarenas",
+      "estado": "Resuelto",
+      "fecha": "17/2/2026"
     }
-  ]
+  ],
+
+
+
+
+  "proyectos": [],
+
+
+
+  
+  "servicios": []
 }

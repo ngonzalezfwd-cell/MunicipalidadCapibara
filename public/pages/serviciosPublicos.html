@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Públicos - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/serviciosPublicos.css">
+    <script src="../js/authGuard.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa-solid fa-broom"></i> Servicios Públicos</h1>
+        <div class="nav-buttons">
+            <a href="gestionReportes.html" class="nav-btn"><i class="fa-solid fa-clipboard-list"></i> Reportes</a>
+            <a href="admin.html" class="nav-btn"><i class="fa-solid fa-arrow-left"></i> Panel Admin</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2><i class="fa-solid fa-plus-circle"></i> Crear Nuevo Servicio Público</h2>
+            <form id="formCrearServicio">
+                <div class="form-group">
+                    <label>Nombre del Servicio:</label>
+                    <input type="text" id="nombreServicio" required
+                        placeholder="Ej: Recolección de Basura - Sector Norte">
+                </div>
+
+                <div class="form-group">
+                    <label>Presupuesto:</label>
+                    <input type="number" id="presupuestoServicio" required placeholder="$$$">
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de Inicio:</label>
+                    <input type="date" id="fechaInicioServicio" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de Finalización:</label>
+                    <input type="date" id="fechaFinServicio" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Descripción:</label>
+                    <textarea id="descripcionServicio" required placeholder="Detalles del servicio..."></textarea>
+                </div>
+
+                <button type="submit"><i class="fa-solid fa-save"></i> Crear Servicio</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <h2><i class="fa-solid fa-list-check"></i> Lista de Servicios Públicos</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Presupuesto</th>
+                            <th class="text-center">Inicio</th>
+                            <th class="text-center">Fin</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="serviciosPublicosTable">
+                        <!-- Los datos se insertarán aquí por JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/adminServicios.js"></script>
+</body>
+
+</html>
