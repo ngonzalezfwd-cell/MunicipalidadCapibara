@@ -8,13 +8,6 @@
       "cedulaUsuario": "12345678"
     },
     {
-      "id": "f58a",
-      "nombreUsuario": "Keylor",
-      "correoUsuario": "keylor@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "12345678"
-    },
-    {
       "id": "196b",
       "nombreUsuario": "David Barrantes Montero",
       "correoUsuario": "davidcr@icloud.com",
@@ -34,7 +27,31 @@
       "cedulaUsuario": "119960699",
       "contraseñaUsuario": "12345678",
       "id": "86aa"
+    },
+    {
+      "id": "ab08",
+      "nombreUsuario": "Keylor PRUEBA",
+      "correoUsuario": "keylillor@gmail.com",
+      "contraseñaUsuario": "keylor14david",
+      "cedulaUsuario": "604910942"
     }
   ],
-  "reportes": []
+  "proyectosViales": [
+    {
+      "nombreProyecto": "Puente",
+      "DescripcionProyecto": "Rio NIro",
+      "PresupuestoProyecto": "100000",
+      "FechaProyecto": "10/2/24",
+      "EstadoProyecto": "lISTO",
+      "id": "9cf8"
+    },
+    {
+      "id": "e574",
+      "nombreProyecto": "Acera",
+      "DescripcionProyecto": "Hacer",
+      "PresupuestoProyecto": "10000",
+      "FechaProyecto": "10/02/25",
+      "EstadoProyecto": "Pendiente"
+    }
+  ]
 }
