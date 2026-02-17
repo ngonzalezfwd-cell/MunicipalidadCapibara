@@ -42,15 +42,15 @@ function showSection(sectionId) {
     if (sectionId === "sectionEliminar") cargarListaEliminar();
 }
 
-btnNavMostrar.addEventListener("click", function () {showSection("sectionMostrar");});
+btnNavMostrar.addEventListener("click", function () { showSection("sectionMostrar"); });
 
-btnNavGestion.addEventListener("click", function () {showSection("sectionGestion");});
+btnNavGestion.addEventListener("click", function () { showSection("sectionGestion"); });
 
-btnNavAgregar.addEventListener("click", function () {showSection("sectionAgregar");});
+btnNavAgregar.addEventListener("click", function () { showSection("sectionAgregar"); });
 
-btnNavActualizar.addEventListener("click", function () {showSection("sectionActualizar");});
+btnNavActualizar.addEventListener("click", function () { showSection("sectionActualizar"); });
 
-btnNavEliminar.addEventListener("click", function () {showSection("sectionEliminar");});
+btnNavEliminar.addEventListener("click", function () { showSection("sectionEliminar"); });
 
 
 // --- READ ---
@@ -67,25 +67,23 @@ async function usuariosEnPantalla() {
 
         const table = document.createElement("table");
         table.className = "admin-table";
-        table.innerHTML = `
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Cédula</th>
-                    <th>Correo</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        `;
+        table.innerHTML =
+            "<thead>" +
+            "<tr>" +
+            "<th>Nombre</th>" +
+            "<th>Cédula</th>" +
+            "<th>Correo</th>" +
+            "</tr>" +
+            "</thead>" +
+            "<tbody></tbody>";
 
         const tbody = table.querySelector("tbody");
         usuarios.forEach(usuario => {
             const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${usuario.nombreUsuario}</td>
-                <td>${usuario.cedulaUsuario}</td>
-                <td>${usuario.correoUsuario}</td>
-            `;
+            tr.innerHTML =
+                "<td>" + usuario.nombreUsuario + "</td>" +
+                "<td>" + usuario.cedulaUsuario + "</td>" +
+                "<td>" + usuario.correoUsuario + "</td>";
             tbody.appendChild(tr);
         });
         usuariosData.appendChild(table);
@@ -141,30 +139,30 @@ async function cargarListaActualizar() {
             return;
         }
 
+        document.getElementById("editForm").style.display = "none";
+
         const table = document.createElement("table");
         table.className = "admin-table";
 
-        table.innerHTML = `
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Cédula</th>
-                    <th>Correo</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        `;
+        table.innerHTML =
+            "<thead>" +
+            "<tr>" +
+            "<th>Nombre</th>" +
+            "<th>Cédula</th>" +
+            "<th>Correo</th>" +
+            "<th>Acción</th>" +
+            "</tr>" +
+            "</thead>" +
+            "<tbody></tbody>";
 
         const tbody = table.querySelector("tbody");
         usuarios.forEach(usuario => {
             const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${usuario.nombreUsuario}</td>
-                <td>${usuario.cedulaUsuario}</td>
-                <td>${usuario.correoUsuario}</td>
-                <td><button class="edit-action-btn" onclick="prepararEdicionClick('${usuario.id}')"><i class="fa-solid fa-user-pen"></i> Editar</button></td>
-            `;
+            tr.innerHTML =
+                "<td>" + usuario.nombreUsuario + "</td>" +
+                "<td>" + usuario.cedulaUsuario + "</td>" +
+                "<td>" + usuario.correoUsuario + "</td>" +
+                "<td><button class='edit-action-btn' onclick=\"prepararEdicionClick('" + usuario.id + "')\"><i class='fa-solid fa-user-pen'></i> Editar</button></td>";
             // Guardamos el objeto usuario en un atributo de datos para recuperarlo fácilmente si fuera necesario, 
             // aunque pasaremos el ID para buscarlo.
 
@@ -187,7 +185,7 @@ window.prepararEdicionClick = async (id) => {
     const usuarios = await getUsuarios();
 
     const usuario = usuarios.find(u => u.id === id);
-    
+
     if (usuario) prepararEdicion(usuario);
 };
 
@@ -244,25 +242,23 @@ async function cargarListaEliminar() {
 
         const table = document.createElement("table");
         table.className = "admin-table";
-        table.innerHTML = `
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        `;
+        table.innerHTML =
+            "<thead>" +
+            "<tr>" +
+            "<th>Nombre</th>" +
+            "<th>Correo</th>" +
+            "<th>Acción</th>" +
+            "</tr>" +
+            "</thead>" +
+            "<tbody></tbody>";
 
         const tbody = table.querySelector("tbody");
         usuarios.forEach(usuario => {
             const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${usuario.nombreUsuario}</td>
-                <td>${usuario.correoUsuario}</td>
-                <td><button class="delete-action-btn" onclick="eliminarUsuario('${usuario.id}')"><i class="fa-solid fa-trash"></i> Eliminar</button></td>
-            `;
+            tr.innerHTML =
+                "<td>" + usuario.nombreUsuario + "</td>" +
+                "<td>" + usuario.correoUsuario + "</td>" +
+                "<td><button class='delete-action-btn' onclick=\"eliminarUsuario('" + usuario.id + "')\"><i class='fa-solid fa-trash'></i> Eliminar</button></td>";
             tbody.appendChild(tr);
         });
         deleteList.appendChild(table);
@@ -311,8 +307,7 @@ cerrarSesionBtn.addEventListener("click", async function () {
     });
 
     if (result.isConfirmed) {
-        sessionStorage.removeItem("isAdmin");
-        sessionStorage.removeItem("userRole");
+        sessionStorage.clear();
         window.location.href = "login.html";
     }
 });

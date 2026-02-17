@@ -75,27 +75,19 @@ btnEnviar.addEventListener("click", async function () {
         return;
     }
 
-    const Respuesta = await postUsuarios(usuarioCrear);
+    const respuesta = await postUsuarios(usuarioCrear);
 
-
-    if (Respuesta) {
+    if (respuesta) {
         Swal.fire({
             title: "¡Usuario creado!",
             text: "¡Bienvenido " + usuarioCrear.nombreUsuario + "!",
             icon: "success",
             confirmButtonText: "Aceptar"
+        }).then(() => {
+            window.location.href = "../pages/login.html";
         });
-
-        window.location.href = "../pages/login.html";
-
-        nombre.value = "";
-        correo.value = "";
-        contraseña.value = "";
-        cedula.value = "";
-
     } else {
         Swal.fire({
-
             title: "Error",
             text: "No se pudo crear el usuario. Verifique la conexión con el servidor.",
             icon: "error",

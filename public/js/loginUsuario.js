@@ -35,6 +35,7 @@ btnLogin.addEventListener("click", async function () {
 
         sessionStorage.setItem("isAdmin", "true");
         sessionStorage.setItem("userRole", "admin");
+        sessionStorage.setItem("isLoggedIn", "true");
 
         Swal.fire({
             title: "¡Bienvenido " + (usuarioInicio ? usuarioInicio.nombreUsuario : "Administrador") + "!",
@@ -46,11 +47,15 @@ btnLogin.addEventListener("click", async function () {
             window.location.href = "../pages/admin.html";
 
         });
-        
+
         return;
     }
 
     if (usuarioInicio) {
+
+        sessionStorage.setItem("isAdmin", "false");
+        sessionStorage.setItem("userRole", "user");
+        sessionStorage.setItem("isLoggedIn", "true");
 
         Swal.fire({
             title: "¡Login correcto!",

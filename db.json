@@ -22,5 +22,15 @@
       "cedulaUsuario": "119960697"
     }
   ],
-  "reportes": []
+  "reportes": [
+    {
+      "id": "5f70",
+      "titulo": "bache en calle central",
+      "tipo": "Reporte General",
+      "descripcion": "si",
+      "ubicacion": "puntarenas",
+      "estado": "Resuelto",
+      "fecha": "17/2/2026"
+    }
+  ]
 }

@@ -99,44 +99,80 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-/* User List Styling */
-.data-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+/* Report Table Styling */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
 }
 
-.data-card {
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
     background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--accent);
-    text-align: center;
-    transition: transform 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.data-card:hover {
-    transform: translateY(-5px);
+.report-table th,
+.report-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
 }
 
-.data-card i {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.data-card span {
+.report-table th {
+    background: var(--primary);
+    color: white;
     font-weight: 600;
-    color: var(--text-dark);
 }
 
-.data-card p {
+.report-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Status Badges */
+.status-pendiente {
+    background: #ffd54f;
+    color: #856404;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-en-proceso {
+    background: #64b5f6;
+    color: #0d47a1;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-resuelto {
+    background: var(--success);
+    color: #1b5e20;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Action Buttons in Table */
+.btn-ver, .btn-estado {
+    padding: 0.5rem 0.8rem;
     font-size: 0.8rem;
-    color: #666;
-    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+}
+
+.btn-ver {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+.btn-estado {
+    background: var(--primary);
 }
 
 .action-buttons {
