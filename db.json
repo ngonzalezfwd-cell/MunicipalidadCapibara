@@ -1,39 +1,25 @@
 {
   "usuarios": [
     {
-      "id": "23c0",
-      "nombreUsuario": "Keylor",
-      "correoUsuario": "keylor@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "12345678"
-    },
-    {
-      "id": "f58a",
-      "nombreUsuario": "Keylor",
-      "correoUsuario": "keylor@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "12345678"
-    },
-    {
-      "id": "196b",
-      "nombreUsuario": "David Barrantes Montero",
-      "correoUsuario": "davidcr@icloud.com",
-      "contraseñaUsuario": "keylor15david.",
-      "cedulaUsuario": "604910942"
-    },
-    {
-      "id": "b333",
-      "nombreUsuario": "Carlos Andres JR",
-      "correoUsuario": "jr@gmail.com",
-      "contraseñaUsuario": "1234567",
-      "cedulaUsuario": "1856857"
-    },
-    {
+      "id": "d58a",
       "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "cedulaUsuario": "119960699",
+      "correoUsuario": "ngonzalezfwd@gmail.com",
       "contraseñaUsuario": "12345678",
-      "id": "86aa"
+      "cedulaUsuario": "119960697"
+    },
+    {
+      "nombreUsuario": "juas",
+      "correoUsuario": "gfg@gmail.com",
+      "cedulaUsuario": "233244332",
+      "contraseñaUsuario": "12345678",
+      "id": "a76e"
+    },
+    {
+      "id": "478e",
+      "nombreUsuario": "Naomy",
+      "correoUsuario": "ngonzalezfwd@gmail.com",
+      "contraseñaUsuario": "12345678",
+      "cedulaUsuario": "119960697"
     }
   ],
   "reportes": []

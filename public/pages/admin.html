@@ -6,37 +6,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración - Municipalidad Capibara</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/admin.css">
+    <script src="../js/authGuard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
     <header>
-        <h1><i class="fa-solid fa-user-shield"></i> Panel Administrativo</h1>
-        <a href="home.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>
+
+        <div class="header-left">
+            <h1><i class="fa-solid fa-user-shield"></i> Panel Administrativo</h1>
+        </div>
+        <nav class="admin-main-nav">
+
+            <button id="btnNavMostrar" class="nav-btn active"><i class="fa-solid fa-users"></i> Usuarios</button>
+            <button id="btnNavGestion" class="nav-btn"><i class="fa-solid fa-layer-group"></i> Gestión</button>
+            <button id="btnNavAgregar" class="nav-btn"><i class="fa-solid fa-user-plus"></i> Nuevo</button>
+            <button id="btnNavActualizar" class="nav-btn"><i class="fa-solid fa-user-pen"></i> Editar</button>
+            <button id="btnNavEliminar" class="nav-btn"><i class="fa-solid fa-user-minus"></i> Eliminar</button>
+        </nav>
+        <div class="header-right">
+
+            <button id="cerrarSesionBtn" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i>
+                Salir</button>
+        </div>
     </header>
 
     <main>
-        <div class="dashboard-grid">
-            <a href="../pages/gestionReportes.html" class="card">
-                <i class="fa-solid fa-clipboard-list"></i>
-                <h3>Gestionar Reportes</h3>
-                <p>Monitorear y atender reportes ciudadanos.</p>
-            </a>
-            <a href="../pages/proyectosViales.html" class="card">
-                <i class="fa-solid fa-road"></i>
-                <h3>Proyectos Viales</h3>
-                <p>Planificación y estado de obras viales.</p>
-            </a>
-            <a href="../pages/serviciosPublicos.html" class="card">
-                <i class="fa-solid fa-broom"></i>
-                <h3>Servicios Públicos</h3>
-                <p>Gestión de limpieza y mantenimiento urbano.</p>
-            </a>
-        </div>
+
+        <!-- Sección Mostrar -->
+        <section id="sectionMostrar" class="admin-section">
+            <h2>Lista de Usuarios</h2>
+            <div id="usuariosData"></div>
+        </section>
+
+        <!-- Sección Agregar -->
+
+        <section id="sectionAgregar" class="admin-section" style="display:none;">
+            <h2>Agregar Nuevo Usuario</h2>
+
+            <div class="form-container">
+                <input type="text" id="addNombre" placeholder="Nombre">
+                <input type="email" id="addCorreo" placeholder="Correo">
+                <input type="text" id="addCedula" placeholder="Cédula">
+                <input type="password" id="addPass" placeholder="Contraseña">
+                <button id="btnGuardarUsuario">Guardar Usuario</button>
+
+            </div>
+        </section>
+
+        <!-- Sección Actualizar -->
+
+        <section id="sectionActualizar" class="admin-section" style="display:none;">
+
+            <h2>Actualizar Usuario</h2>
+
+            <div id="updateList"></div>
+
+            <div id="editForm" style="display:none;" class="form-container">
+
+                <h3><i class="fa-solid fa-pen-to-square"></i> Editar Datos del Usuario</h3>
+                <input type="hidden" id="editId">
+                <input type="text" id="editNombre" placeholder="Nombre">
+                <input type="email" id="editCorreo" placeholder="Correo">
+                <input type="text" id="editCedula" placeholder="Cédula">
+                <input type="password" id="editPass" placeholder="Contraseña">
+
+                <button id="btnConfirmarActualizar">Confirmar Cambios</button>
+            </div>
+        </section>
+
+        <!-- Sección Gestión -->
+
+        <section id="sectionGestion" class="admin-section" style="display:none;">
+            <h2>Módulos de Gestión</h2>
+
+            <div class="dashboard-grid">
+
+                <a href="../pages/gestionReportes.html" class="card">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <h3>Gestión de Reportes</h3>
+                    <p>Monitorear y atender reportes ciudadanos.</p>
+                </a>
+
+                <a href="../pages/proyectosViales.html" class="card">
+                    <i class="fa-solid fa-road"></i>
+                    <h3>Proyectos Viales</h3>
+                    <p>Estado de obras y pavimentación.</p>
+                </a>
+
+                <a href="../pages/serviciosPublicos.html" class="card">
+                    <i class="fa-solid fa-broom"></i>
+                    <h3>Servicios Públicos</h3>
+                    <p>Mantenimiento y aseo urbano.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección Eliminar -->
+
+        <section id="sectionEliminar" class="admin-section" style="display:none;">
+
+            <h2>Eliminar Usuario</h2>
+            <div id="deleteList"></div>
+        </section>
+        
     </main>
 
-    <script type="module" src="../js/devPag.js"></script>
+    <script type="module" src="../js/admin.js"></script>
 </body>
 
 </html>

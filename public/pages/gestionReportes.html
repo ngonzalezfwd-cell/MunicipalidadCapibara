@@ -7,6 +7,7 @@
     <title>Gestión de Reportes - Municipalidad Capibara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/gestionReportes.css">
+    <script src="../js/authGuard.js"></script>
 </head>
 
 <body>
@@ -17,14 +18,25 @@
     </header>
 
     <main>
-        <div class="container" id="usuariosData">
+        <div class="container" id="reportesPanel">
             <h2><i class="fa-solid fa-users"></i> Panel de Control</h2>
-            <ul>
-                <li><i class="fa-solid fa-user"></i> Usuarios</li>
-                <li><i class="fa-solid fa-file-alt"></i> Reportes</li>
-                <li><i class="fa-solid fa-concierge-bell"></i> Servicios</li>
-                <li><i class="fa-solid fa-question-circle"></i> Ayuda</li>
-            </ul>
+            <div class="data-grid">
+                <div class="data-card">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Usuarios</span>
+                    <p>5 Registrados</p>
+                </div>
+                <div class="data-card">
+                    <i class="fa-solid fa-file-alt"></i>
+                    <span>Reportes</span>
+                    <p>12 Activos</p>
+                </div>
+                <div class="data-card">
+                    <i class="fa-solid fa-concierge-bell"></i>
+                    <span>Servicios</span>
+                    <p>8 Activos</p>
+                </div>
+            </div>
 
             <div class="action-buttons">
                 <button id="btnDarSeguimiento"><i class="fa-solid fa-magnifying-glass"></i> Dar Seguimiento</button>

@@ -7,6 +7,7 @@
     <title>Registrarme - Municipalidad Capibara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/register.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -14,6 +15,7 @@
     <a href="home.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver</a>
 
     <div class="register-container">
+
         <div class="register-header">
             <h2>Crear Cuenta</h2>
             <p>Únete a la plataforma digital de tu municipalidad</p>
@@ -23,29 +25,38 @@
             <label for="nombreUsuario">Nombre Completo</label>
             <div class="input-wrapper">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" id="nombreUsuario" placeholder="Juan Pérez">
+                <input type="text" id="nombreUsuario" placeholder="Tu nombre completo">
             </div>
         </div>
 
         <div class="input-group">
+
             <label for="cedulaUsuario">Número de Cédula</label>
+
             <div class="input-wrapper">
+
                 <i class="fa-solid fa-id-card"></i>
-                <input type="text" id="cedulaUsuario" placeholder="1-2345-6789">
+                <input type="text" id="cedulaUsuario" placeholder="0-0000-0000">
             </div>
         </div>
 
         <div class="input-group">
+
             <label for="correoUsuario">Correo Electrónico</label>
+
             <div class="input-wrapper">
+
                 <i class="fa-solid fa-envelope"></i>
                 <input type="text" id="correoUsuario" placeholder="ejemplo@correo.com">
             </div>
         </div>
 
         <div class="input-group">
+
             <label for="contraseñaUsuario">Contraseña</label>
+
             <div class="input-wrapper">
+
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" id="contraseñaUsuario" placeholder="••••••••">
             </div>
@@ -54,11 +65,12 @@
         <button id="btnEnviarUsuario">REGISTRARME</button>
 
         <div class="footer-links">
+            
             <p>¿Ya tienes una cuenta? <a href="../pages/login.html">Inicia sesión aquí</a></p>
         </div>
     </div>
 
-    <script type="module" src="../js/functions.js"></script>
+    <script type="module" src="../js/register.js"></script>
 </body>
 
 </html>

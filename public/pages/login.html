@@ -7,6 +7,7 @@
     <title>Iniciar Sesión - Municipalidad Capibara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -14,25 +15,32 @@
     <a href="home.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver</a>
 
     <div class="login-container">
+
         <div class="login-header">
+
             <h2>Bienvenido</h2>
             <p>Ingresa tus credenciales para continuar</p>
+
         </div>
 
         <div class="input-group">
+
             <label for="correoUsuario">Correo Electrónico</label>
+
             <div class="input-wrapper">
                 <i class="fa-solid fa-envelope"></i>
                 <input type="text" id="correoUsuario" placeholder="ejemplo@correo.com">
             </div>
+
         </div>
 
         <div class="input-group">
             <label for="contraseñaUsuario">Contraseña</label>
             <div class="input-wrapper">
                 <i class="fa-solid fa-lock"></i>
+                
                 <input type="password" id="contraseñaUsuario" placeholder="••••••••">
-                <!-- Changed type to password for security, hope JS handles it fine (usually .value works same) -->
+            
             </div>
         </div>
 

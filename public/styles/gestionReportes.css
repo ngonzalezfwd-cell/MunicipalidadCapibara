@@ -100,21 +100,43 @@ h2 {
 }
 
 /* User List Styling */
-#usuariosData ul {
-    list-style: none;
+.data-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
-#usuariosData li {
+.data-card {
     background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid var(--accent);
-    font-weight: 500;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--accent);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+}
+
+.data-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.data-card span {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.data-card p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.3rem;
 }
 
 .action-buttons {

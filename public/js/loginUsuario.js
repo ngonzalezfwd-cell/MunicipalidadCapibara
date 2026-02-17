@@ -8,7 +8,17 @@ const btnLogin = document.getElementById("btnEnviarLogin");
 btnLogin.addEventListener("click", async function () {
 
     const respuesta = await getUsuarios();
-    
+
+    if (!respuesta) {
+        Swal.fire({
+            title: "Error",
+            text: "No se pudo conectar con el servidor",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
+
     const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
 
     if (correo.value.trim() === "" || contraseña.value.trim() === "") {
@@ -21,25 +31,22 @@ btnLogin.addEventListener("click", async function () {
         return;
     }
 
-    if (!respuesta) {
-        Swal.fire({
-            title: "Error",
-            text: "No se pudo conectar con el servidor",
-            icon: "error",
-            confirmButtonText: "Aceptar"
-        });
-        return;
-    }
     if (correo.value === "gnaomy276@gmail.com" && contraseña.value === "12345678") {
 
+        sessionStorage.setItem("isAdmin", "true");
+        sessionStorage.setItem("userRole", "admin");
+
         Swal.fire({
-            title: "¡Bienvenido " + usuarioInicio.nombreUsuario + "!",
+            title: "¡Bienvenido " + (usuarioInicio ? usuarioInicio.nombreUsuario : "Administrador") + "!",
             text: "Entraste como Admin",
             icon: "success",
+
             confirmButtonText: "Aceptar"
         }).then(() => {
             window.location.href = "../pages/admin.html";
+
         });
+        
         return;
     }
 
@@ -55,10 +62,10 @@ btnLogin.addEventListener("click", async function () {
             window.location.href = "../pages/home.html";
         });
 
-        
+
 
     } else {
-        
+
         Swal.fire({
             title: "Error",
             text: "Correo o contraseña incorrectas, por favor intente de nuevo",

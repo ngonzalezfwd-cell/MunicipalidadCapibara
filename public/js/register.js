@@ -1,4 +1,4 @@
-import {postUsuarios} from "../services/serviceUsuarios.js";
+import { postUsuarios, getUsuarios } from "../services/serviceUsuarios.js";
 
 const nombre = document.getElementById("nombreUsuario");
 const correo = document.getElementById("correoUsuario");
@@ -7,8 +7,8 @@ const cedula = document.getElementById("cedulaUsuario");
 const btnEnviar = document.getElementById("btnEnviarUsuario");
 
 
-btnEnviar.addEventListener("click", async function() {
-    
+btnEnviar.addEventListener("click", async function () {
+
     if (nombre.value.trim() === "" || correo.value.trim() === "" || contraseña.value.trim() === "" || cedula.value.trim() === "") {
 
         Swal.fire({
@@ -31,7 +31,7 @@ btnEnviar.addEventListener("click", async function() {
         return;
     }
 
-   
+
     if (cedula.value.trim().length !== 9) {
 
         Swal.fire({
@@ -62,6 +62,19 @@ btnEnviar.addEventListener("click", async function() {
         cedulaUsuario: cedula.value
     };
 
+    const usuariosExistentes = await getUsuarios();
+    const existe = usuariosExistentes.some(u => u.correoUsuario === correo.value || u.cedulaUsuario === cedula.value);
+
+    if (existe) {
+        Swal.fire({
+            title: "Usuario ya registrado",
+            text: "El correo o la cédula ya están en uso.",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
+
     const Respuesta = await postUsuarios(usuarioCrear);
 
 
@@ -74,7 +87,7 @@ btnEnviar.addEventListener("click", async function() {
         });
 
         window.location.href = "../pages/login.html";
-      
+
         nombre.value = "";
         correo.value = "";
         contraseña.value = "";
@@ -82,7 +95,7 @@ btnEnviar.addEventListener("click", async function() {
 
     } else {
         Swal.fire({
-            
+
             title: "Error",
             text: "No se pudo crear el usuario. Verifique la conexión con el servidor.",
             icon: "error",
@@ -90,34 +103,3 @@ btnEnviar.addEventListener("click", async function() {
         });
     }
 });
-
-
-
-//Trae la funcion de serviceUsuarios GET
-async function obtenerUsuarios() {
-    
-    const usariosObtenidos = await getUsuarios();
-    return usariosObtenidos;//RECORDAR RETORNAR LA PROMESA
-
-}
-export {obtenerUsuarios}
-
-
-//OBTIENE LOS USUARIOS
-
-//usuariosData
-//Rederizar los datos en pantalla
-
-// async function usuariosEnPantalla() {
-//     let usuariosFinales= await obtenerUsuarios();
-    
-//     for (let index = 0; index < usuariosFinales.length; index++) {
-//         //console.log(usuariosFinales[index].nombreUsuario);
-        
-//         let p = document.createElement("p");
-//         p.textContent = usuariosFinales[index].nombreUsuario;
-//         usuariosData.appendChild(p);
-//     }
-// }
-
-// usuariosEnPantalla();
