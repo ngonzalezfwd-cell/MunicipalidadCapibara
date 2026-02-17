@@ -65,7 +65,9 @@ btnLogin.addEventListener("click", async function () {
             confirmButtonText: "Aceptar"
 
         }).then(() => {
-            window.location.href = "../pages/home.html";
+
+            window.location.href = "../pages/usuarioIniciado.html";
+
         });
 
 
