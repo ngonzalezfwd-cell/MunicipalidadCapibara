@@ -4,9 +4,7 @@ const correo = document.getElementById("correoUsuario");
 const contraseña = document.getElementById("contraseñaUsuario");
 const btnLogin = document.getElementById("btnEnviarLogin");
 
-
 btnLogin.addEventListener("click", async function () {
-
     const respuesta = await getUsuarios();
 
     if (!respuesta) {
@@ -19,8 +17,6 @@ btnLogin.addEventListener("click", async function () {
         return;
     }
 
-    const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
-
     if (correo.value.trim() === "" || contraseña.value.trim() === "") {
         Swal.fire({
             title: "Error",
@@ -31,8 +27,9 @@ btnLogin.addEventListener("click", async function () {
         return;
     }
 
-    if (correo.value === "gnaomy276@gmail.com" && contraseña.value === "12345678") {
+    const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
 
+    if (correo.value === "gnaomy276@gmail.com" && contraseña.value === "12345678") {
         sessionStorage.setItem("isAdmin", "true");
         sessionStorage.setItem("userRole", "admin");
         sessionStorage.setItem("isLoggedIn", "true");
@@ -41,18 +38,14 @@ btnLogin.addEventListener("click", async function () {
             title: "¡Bienvenido " + (usuarioInicio ? usuarioInicio.nombreUsuario : "Administrador") + "!",
             text: "Entraste como Admin",
             icon: "success",
-
             confirmButtonText: "Aceptar"
         }).then(() => {
             window.location.href = "../pages/admin.html";
-
         });
-
         return;
     }
 
     if (usuarioInicio) {
-
         sessionStorage.setItem("isAdmin", "false");
         sessionStorage.setItem("userRole", "user");
         sessionStorage.setItem("isLoggedIn", "true");
@@ -63,17 +56,10 @@ btnLogin.addEventListener("click", async function () {
             text: "Bienvenido " + usuarioInicio.nombreUsuario,
             icon: "success",
             confirmButtonText: "Aceptar"
-
         }).then(() => {
-
             window.location.href = "../pages/usuarioIniciado.html";
-
         });
-
-
-
     } else {
-
         Swal.fire({
             title: "Error",
             text: "Correo o contraseña incorrectas, por favor intente de nuevo",
@@ -85,6 +71,3 @@ btnLogin.addEventListener("click", async function () {
     contraseña.value = "";
     correo.value = "";
 });
-
-
-

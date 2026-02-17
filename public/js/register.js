@@ -6,11 +6,8 @@ const contraseña = document.getElementById("contraseñaUsuario");
 const cedula = document.getElementById("cedulaUsuario");
 const btnEnviar = document.getElementById("btnEnviarUsuario");
 
-
 btnEnviar.addEventListener("click", async function () {
-
     if (nombre.value.trim() === "" || correo.value.trim() === "" || contraseña.value.trim() === "" || cedula.value.trim() === "") {
-
         Swal.fire({
             title: "Error",
             text: "Por favor, complete todos los campos",
@@ -21,7 +18,6 @@ btnEnviar.addEventListener("click", async function () {
     }
 
     if (!correo.value.includes("@") || !correo.value.includes(".")) {
-
         Swal.fire({
             title: "Error",
             text: "Por favor, coloque un correo válido",
@@ -31,9 +27,7 @@ btnEnviar.addEventListener("click", async function () {
         return;
     }
 
-
     if (cedula.value.trim().length !== 9) {
-
         Swal.fire({
             title: "Error",
             text: "Coloque una cédula válida (9 dígitos)",
@@ -44,7 +38,6 @@ btnEnviar.addEventListener("click", async function () {
     }
 
     if (contraseña.value.length < 8) {
-
         Swal.fire({
             title: "Error",
             text: "La contraseña debe tener al menos 8 caracteres",
@@ -54,16 +47,8 @@ btnEnviar.addEventListener("click", async function () {
         return;
     }
 
-
-    const usuarioCrear = {
-        nombreUsuario: nombre.value,
-        correoUsuario: correo.value,
-        contraseñaUsuario: contraseña.value,
-        cedulaUsuario: cedula.value
-    };
-
     const usuariosExistentes = await getUsuarios();
-    const existe = usuariosExistentes.some(u => u.correoUsuario === correo.value || u.cedulaUsuario === cedula.value);
+    const existe = usuariosExistentes && usuariosExistentes.some(u => u.correoUsuario === correo.value || u.cedulaUsuario === cedula.value);
 
     if (existe) {
         Swal.fire({
@@ -74,6 +59,13 @@ btnEnviar.addEventListener("click", async function () {
         });
         return;
     }
+
+    const usuarioCrear = {
+        nombreUsuario: nombre.value,
+        correoUsuario: correo.value,
+        contraseñaUsuario: contraseña.value,
+        cedulaUsuario: cedula.value
+    };
 
     const respuesta = await postUsuarios(usuarioCrear);
 

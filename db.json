@@ -22,9 +22,6 @@
       "id": "6e30"
     }
   ],
-
-
-
   "reportes": [
     {
       "id": "5f70",
@@ -52,16 +49,18 @@
       "ubicacion": "puntarenas",
       "estado": "Resuelto",
       "fecha": "17/2/2026"
+    },
+    {
+      "id": "b183",
+      "userId": "d58a",
+      "titulo": "bache en calle central",
+      "tipo": "Proyecto Vial",
+      "descripcion": "edd",
+      "ubicacion": "puntarenas",
+      "estado": "Pendiente",
+      "fecha": "17/2/2026"
     }
   ],
-
-
-
-
   "proyectos": [],
-
-
-
-  
   "servicios": []
 }
