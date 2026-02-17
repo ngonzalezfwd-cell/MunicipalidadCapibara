@@ -8,20 +8,23 @@
       "cedulaUsuario": "119960697"
     },
     {
-      "nombreUsuario": "juas",
-      "correoUsuario": "gfg@gmail.com",
-      "cedulaUsuario": "233244332",
-      "contraseñaUsuario": "12345678",
-      "id": "a76e"
-    },
-    {
       "id": "478e",
       "nombreUsuario": "Naomy",
       "correoUsuario": "ngonzalezfwd@gmail.com",
       "contraseñaUsuario": "12345678",
       "cedulaUsuario": "119960697"
+    },
+    {
+      "nombreUsuario": "juan",
+      "correoUsuario": "purog@mail.com",
+      "cedulaUsuario": "504584542",
+      "contraseñaUsuario": "12345678",
+      "id": "6e30"
     }
   ],
+
+
+
   "reportes": [
     {
       "id": "5f70",
@@ -29,8 +32,36 @@
       "tipo": "Reporte General",
       "descripcion": "si",
       "ubicacion": "puntarenas",
+      "estado": "En Proceso",
+      "fecha": "17/2/2026"
+    },
+    {
+      "id": "7bcf",
+      "titulo": "bache en calle central",
+      "tipo": "Proyecto Vial",
+      "descripcion": "umhhmhy",
+      "ubicacion": "puntarenas",
+      "estado": "Resuelto",
+      "fecha": "17/2/2026"
+    },
+    {
+      "id": "fb7c",
+      "titulo": "se cayo el porton",
+      "tipo": "Servicio Público",
+      "descripcion": "fjjfjfjfjfjfjfjfjfjf",
+      "ubicacion": "puntarenas",
       "estado": "Resuelto",
       "fecha": "17/2/2026"
     }
-  ]
+  ],
+
+
+
+
+  "proyectos": [],
+
+
+
+  
+  "servicios": []
 }

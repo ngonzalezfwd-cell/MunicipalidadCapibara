@@ -92,6 +92,26 @@ nav {
     transform: translateY(-2px);
 }
 
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+}
+
+.user-greeting i {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
 .hero {
     flex: 1;
     display: flex;

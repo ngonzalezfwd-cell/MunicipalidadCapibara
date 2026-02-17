@@ -6,11 +6,14 @@
     const ctaGroup = document.querySelector(".cta-group");
 
     if (isLoggedIn) {
+
         // Actualizar links de navegación
         navLinks.innerHTML =
-            "<span class='user-greeting'>Hola, " + (userRole === 'admin' ? 'Admin' : 'Ciudadano') + "</span>" +
+            "<span class='user-greeting'><i class='fa-solid fa-circle-user'></i> Hola, " + (userRole === 'admin' ? 'Admin' : 'Ciudadano') + "</span>" +
+            (userRole === 'user' ? "<a href='../pages/misReportes.html' class='nav-btn'><i class='fa-solid fa-list-check'></i> Mis Reportes</a>" : "") +
             "<button id='btnCerrarSesion' class='nav-btn logout'>Cerrar Sesión</button>";
 
+            
         // Evento de cerrar sesión
         document.getElementById("btnCerrarSesion").addEventListener("click", () => {
             Swal.fire({

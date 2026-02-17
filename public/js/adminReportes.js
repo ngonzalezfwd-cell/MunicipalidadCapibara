@@ -14,11 +14,12 @@ async function mostrarReportes() {
         const statusClass = "status-" + reporte.estado.toLowerCase().replace(/\s+/g, '-');
 
         tr.innerHTML =
+            "<td>" + reporte.id + "</td>" +
             "<td>" + reporte.titulo + "</td>" +
             "<td>" + (reporte.tipo || 'General') + "</td>" +
-            "<td class='" + statusClass + "'>" + reporte.estado + "</td>" +
-            "<td>" + reporte.fecha + "</td>" +
-            "<td>" +
+            "<td class='text-center'><span class='" + statusClass + "'>" + reporte.estado + "</span></td>" +
+            "<td class='text-center'>" + reporte.fecha + "</td>" +
+            "<td class='text-center'>" +
             "<button class='btn-ver' data-id='" + reporte.id + "'>Ver Detalle</button>" +
             "<button class='btn-estado' data-id='" + reporte.id + "'>Cambiar Estado</button>" +
             "</td>";
@@ -85,25 +86,3 @@ function cambiarEstado(id) {
 // Inicializar la vista
 mostrarReportes();
 
-// Manejar el formulario de actualización manual
-const updateForm = document.getElementById("updateStatusForm");
-if (updateForm) {
-    updateForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const id = document.getElementById("reportIdInput").value;
-        const newStatus = document.getElementById("reportStatusSelect").value;
-
-        try {
-            const res = await updateReporteStatus(id, newStatus);
-            if (res) {
-                Swal.fire("¡Éxito!", "Estado del reporte actualizado correctamente", "success");
-                mostrarReportes();
-                updateForm.reset();
-            } else {
-                throw new Error("No se pudo actualizar");
-            }
-        } catch (error) {
-            Swal.fire("Error", "No se encontró un reporte con ese ID", "error");
-        }
-    });
-}

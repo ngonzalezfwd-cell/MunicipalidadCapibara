@@ -1,12 +1,10 @@
-/* gestionReportes.css */
+/* misReportes.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
     --primary: #004e92;
     --primary-dark: #000428;
     --accent: #00d2ff;
-    --danger: #ff5252;
-    --success: #69f0ae;
     --bg-light: #f0f4f8;
     --card-bg: rgba(255, 255, 255, 0.95);
     --text-dark: #333333;
@@ -61,7 +59,12 @@ header h1 {
     gap: 0.5rem;
 }
 
-.back-btn {
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-btn {
     text-decoration: none;
     color: white;
     padding: 0.5rem 1rem;
@@ -71,7 +74,7 @@ header h1 {
     transition: background 0.3s;
 }
 
-.back-btn:hover {
+.nav-btn:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -81,7 +84,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     width: 100%;
 }
@@ -119,13 +122,13 @@ h2::after {
     overflow-x: auto;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: white;
 }
 
 table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background: white;
 }
 
 thead {
@@ -154,6 +157,23 @@ tr:last-child td {
 
 tr:hover td {
     background-color: #f8fbff;
+}
+
+.no-reports {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    background: #f9f9f9;
+    border-radius: 15px;
+    border: 2px dashed #ddd;
+    margin-top: 1rem;
+}
+
+.no-reports i {
+    font-size: 3rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 .text-center {
@@ -188,37 +208,4 @@ tr:hover td {
 .status-rechazado {
     background: #ffebee;
     color: #d32f2f;
-}
-
-/* Action Buttons */
-.btn-ver,
-.btn-estado {
-    padding: 0.5rem 0.8rem;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.3s;
-    margin: 0 0.2rem;
-}
-
-.btn-ver {
-    background: #f0f4f8;
-    color: var(--primary);
-}
-
-.btn-ver:hover {
-    background: var(--primary);
-    color: white;
-}
-
-.btn-estado {
-    background: var(--accent);
-    color: var(--primary-dark);
-}
-
-.btn-estado:hover {
-    background: var(--primary-dark);
-    color: white;
 }

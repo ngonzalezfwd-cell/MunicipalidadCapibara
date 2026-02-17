@@ -20,6 +20,7 @@ document.getElementById("formUsuarioReporte").addEventListener("submit", async f
     }
 
     const nuevoReporte = {
+        userId: sessionStorage.getItem("userId"),
         titulo: titulo,
         tipo: tipo,
         descripcion: descripcion,

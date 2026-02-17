@@ -56,6 +56,7 @@ btnLogin.addEventListener("click", async function () {
         sessionStorage.setItem("isAdmin", "false");
         sessionStorage.setItem("userRole", "user");
         sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("userId", usuarioInicio.id);
 
         Swal.fire({
             title: "¡Login correcto!",
