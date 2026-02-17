@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Municipalidad de escazu</title>
+    <title>Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/home.css">
 </head>
-<body>  
 
-    <a href="../pages/login.html">Login</a>
-    <a href="../pages/register.html">Register</a>
-    <a href="../pages/admin.html">Admin Page</a>
-
-
-    <div>
-        <h1>Esta es la pagina principal </h1>
+<body>
+    <div class="floating-shapes">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
-    
-<script type="module" src=""></script>
+
+    <nav>
+        <a href="home.html" class="logo">
+            <i class="fa-solid fa-building-columns"></i> MuniCapibara
+        </a>
+        <div class="nav-links">
+            <a href="../pages/login.html" class="nav-btn">Iniciar Sesión</a>
+            <a href="../pages/register.html" class="nav-btn">Registrarse</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <h1>Bienvenidos a la<br>Municipalidad Capibara</h1>
+        <p>Gestionando el progreso, construyendo comunidad. Tu municipalidad, más cerca de ti.</p>
+
+        <div class="cta-group">
+            <a href="../pages/admin.html" class="cta-btn"><i class="fa-solid fa-user-shield"></i> Panel Admin</a>
+            <!-- Added a secondary button just for looks, pointing to same place or maybe just '#' -->
+            <a href="#" class="cta-btn secondary"><i class="fa-solid fa-circle-info"></i> Saber más</a>
+        </div>
+    </main>
+
+    <script type="module" src=""></script>
 </body>
+
 </html>

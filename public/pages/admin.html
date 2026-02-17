@@ -1,94 +1,42 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Administración - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/admin.css">
 </head>
 
 <body>
-    <div>
+    <header>
+        <h1><i class="fa-solid fa-user-shield"></i> Panel Administrativo</h1>
+        <a href="home.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>
+    </header>
 
-        <h1>Admin Page</h1>
-    </div>
-
-    <nav>
-        <h2>Panel</h2>
-        <button id="btnNavInicio">Inicio</button>
-
-        <h2>Gestión</h2>
-        <button>Gestio de Reportes</button>
-        <button>Gestión de Proyectos Viales</button>
-        <button>Gestión de Servicios Públicos</button>
-
-
-        <h2>Usuarios</h2>
-        <button id="btnNavMostrar">Mostrar Usuarios</button>
-        <button id="btnNavAgregar">Agregar Usuario</button>
-        <button id="btnNavActualizar">Actualizar Usuario</button>
-        <button id="btnNavEliminar">Eliminar Usuario</button>
-
-        <button id="cerrarSesionBtn">Cerrar Sesión</button>
-    </nav>
-
-
-    <section id="mainContent">
-
-        <!-- SECCIÓN INICIO -->
-        <div id="sectionInicio" class="admin-section">
-
-            <h2>Bienvenido al Panel de Administración</h2>
+    <main>
+        <div class="dashboard-grid">
+            <a href="../pages/gestionReportes.html" class="card">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <h3>Gestionar Reportes</h3>
+                <p>Monitorear y atender reportes ciudadanos.</p>
+            </a>
+            <a href="../pages/proyectosViales.html" class="card">
+                <i class="fa-solid fa-road"></i>
+                <h3>Proyectos Viales</h3>
+                <p>Planificación y estado de obras viales.</p>
+            </a>
+            <a href="../pages/serviciosPublicos.html" class="card">
+                <i class="fa-solid fa-broom"></i>
+                <h3>Servicios Públicos</h3>
+                <p>Gestión de limpieza y mantenimiento urbano.</p>
+            </a>
         </div>
+    </main>
 
-        <!-- SECCIÓN MOSTRAR -->
-        <div id="sectionMostrar" class="admin-section" style="display: none;">
-
-            <h2>Lista de Usuarios</h2>
-            <div id="usuariosData"></div>
-        </div>
-
-        <!-- SECCIÓN AGREGAR -->
-        <div id="sectionAgregar" class="admin-section" style="display: none;">
-
-            <h2>Agregar Nuevo Usuario</h2>
-            <div class="form-group">
-                <input type="text" id="addNombre" placeholder="Nombre Completo">
-                <input type="text" id="addCorreo" placeholder="Correo Electrónico">
-                <input type="text" id="addCedula" placeholder="Cédula">
-                <input type="password" id="addPass" placeholder="Contraseña">
-                <button id="btnGuardarUsuario">Guardar Usuario</button>
-            </div>
-        </div>
-
-        <!-- SECCIÓN ACTUALIZAR -->
-        <div id="sectionActualizar" class="admin-section" style="display: none;">
-            <h2>Actualizar Usuario</h2>
-            <p>Seleccione un usuario para editar:</p>
-            <div id="updateList"></div>
-
-            <div id="editForm" style="display: none; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 20px;">
-                <input type="hidden" id="editId">
-                <input type="text" id="editNombre" placeholder="Nombre Completo">
-                <input type="text" id="editCorreo" placeholder="Correo Electrónico">
-                <input type="text" id="editCedula" placeholder="Cédula">
-                <input type="password" id="editPass" placeholder="Contraseña">
-                <button id="btnConfirmarActualizar">Confirmar Cambios</button>
-            </div>
-        </div>
-
-        <!-- SECCIÓN ELIMINAR -->
-        <div id="sectionEliminar" class="admin-section" style="display: none;">
-            <h2>Eliminar Usuario</h2>
-            <div id="deleteList"></div>
-        </div>
-    </section>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="../js/admin.js"></script>
+    <script type="module" src="../js/devPag.js"></script>
 </body>
-
-</html>
 
 </html>

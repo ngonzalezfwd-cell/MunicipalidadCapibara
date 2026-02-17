@@ -4,36 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resgistrarme</title>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="../styles/login_registrer.css">
+    <title>Registrarme - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/register.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <a href="home.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver</a>
 
-        <h1>Resgistrate</h1>
+    <div class="register-container">
+        <div class="register-header">
+            <h2>Crear Cuenta</h2>
+            <p>Únete a la plataforma digital de tu municipalidad</p>
+        </div>
 
-        <h3>Nombre Completo</h3>
-        <input type="text" id="nombreUsuario" placeholder="Ana Maria">
+        <div class="input-group">
+            <label for="nombreUsuario">Nombre Completo</label>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="nombreUsuario" placeholder="Juan Pérez">
+            </div>
+        </div>
 
-        <h3>Correo Electronico</h3>
-        <input type="text" id="correoUsuario" placeholder="ejemplo@gmail.com">
-        <h3>Contraseña</h3>
+        <div class="input-group">
+            <label for="cedulaUsuario">Número de Cédula</label>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-id-card"></i>
+                <input type="text" id="cedulaUsuario" placeholder="1-2345-6789">
+            </div>
+        </div>
 
-        <input type="text" id="contraseñaUsuario" placeholder="********">
-        <h3>Numero de cedula</h3>
-        <input type="text" id="cedulaUsuario" placeholder="*-****-****"><br><br><br>
+        <div class="input-group">
+            <label for="correoUsuario">Correo Electrónico</label>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" id="correoUsuario" placeholder="ejemplo@correo.com">
+            </div>
+        </div>
 
-        <button id="btnEnviarUsuario">Registrarse</button>
+        <div class="input-group">
+            <label for="contraseñaUsuario">Contraseña</label>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="contraseñaUsuario" placeholder="••••••••">
+            </div>
+        </div>
 
-        <p>¿Ya tienes cuenta? <a href="../pages/login.html">Inicia Sesión</a></p>
+        <button id="btnEnviarUsuario">REGISTRARME</button>
 
+        <div class="footer-links">
+            <p>¿Ya tienes una cuenta? <a href="../pages/login.html">Inicia sesión aquí</a></p>
+        </div>
     </div>
 
-    <script type="module" src="../js/register.js"></script>
+    <script type="module" src="../js/functions.js"></script>
 </body>
 
 </html>
