@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Reportes</title>
+</head>
+<body>
+
+    <h1>Panel de Administración - Gestión de Reportes</h1>
+
+    <div id="usuariosData">
+        <h2>Usuarios</h2>
+        <ul>
+            <li>Usuarios</li>
+            <li>Reportes</li>
+            <li>Servicios</li>
+            <li>Ayuda</li>
+        </ul>
+        <button id="btnDarSeguimiento">Dar Seguimiento</button>
+        <button id="btnCambiarEstado">Cambiar Estado</button>
+        <button id="btnEliminar">Eliminar</button>
+    </div>
+
+    <h2>Actualizar Estado del Reporte</h2>
+
+    <form>
+        <label>ID del Reporte:</label>
+        <input type="number" required>
+
+        <label>Nuevo Estado:</label>
+        <select>
+            <option>Pendiente</option>
+            <option>En Proceso</option>
+            <option>Resuelto</option>
+        </select>
+
+        <br><br>
+        <button type="submit">Actualizar</button>
+    </form>
+
+    <script type="module" src="../js/gestionReportes.js"></script>
+
+</body>
+</html>
