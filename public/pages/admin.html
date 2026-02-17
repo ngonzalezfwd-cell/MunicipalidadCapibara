@@ -1,18 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f4f7f6; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .section-title { border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 30px; color: #2c3e50; }
+        .table-reportes { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .table-reportes th, .table-reportes td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        .table-reportes th { background-color: #3498db; color: white; }
+        .status-pendiente { color: #e67e22; font-weight: bold; }
+        .status-en-proceso { color: #3498db; font-weight: bold; }
+        .status-resuelto { color: #27ae60; font-weight: bold; }
+        button { cursor: pointer; padding: 5px 10px; border: none; border-radius: 4px; background-color: #3498db; color: white; margin-right: 5px; }
+        button:hover { background-color: #2980b9; }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>Admin Page</h1>
+    <div class="container">
+        <h1>Panel de Administración</h1>
+        
+        <h2 class="section-title">Gestión de Usuarios</h2>
+        <div id="usuariosData"></div>
+
+        <h2 class="section-title">Gestión de Reportes Ciudadanos</h2>
+        <table class="table-reportes">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="reportesData">
+                <!-- Data injected by JS -->
+            </tbody>
+        </table>
     </div>
 
-    <div id="usuariosData"></div>
 
-
-<script type="module" src="../js/devPag.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Scripts de Gestión -->
+    <script type="module" src="../js/devPag.js"></script>
+    <script type="module" src="../js/adminReportes.js"></script>
 </body>
 </html>

@@ -36,5 +36,22 @@
       "cedulaUsuario": "119960697"
     }
   ],
-  "reportes": []
+  "reportes": [
+    {
+      "id": "r1",
+      "usuarioId": "23c0",
+      "titulo": "Bache en calle principal",
+      "descripcion": "Hay un bache gigante frente a la entrada de la escuela.",
+      "estado": "Pendiente",
+      "fecha": "2026-02-15"
+    },
+    {
+      "id": "r2",
+      "usuarioId": "196b",
+      "titulo": "Luminaria apagada",
+      "descripcion": "El poste de luz #456 no enciende por las noches.",
+      "estado": "En Proceso",
+      "fecha": "2026-02-16"
+    }
+  ]
 }

@@ -44,7 +44,7 @@ async function postUsuarios(usuario) {
 
 export {postUsuarios} 
 
-<<<<<<< RamadeAndres
+
 //DELETE
 
 async function deleteUsuarios(id) {
@@ -56,7 +56,17 @@ async function deleteUsuarios(id) {
                 "Content-Type":"application/json"
             },
             body:JSON.stringify(id) 
-=======
+        })
+
+    }catch (error) {
+        console.error("Error al obtener los usuarios", error)
+
+
+    } 
+}
+
+export {deleteUsuarios}  
+
 
 //PUT
 
@@ -71,7 +81,7 @@ async function putUsuarios(id, usuario) {
             },
             
             body:JSON.stringify(usuario) 
->>>>>>> main
+
         })
 
         const userData = await response.json();
@@ -79,19 +89,12 @@ async function putUsuarios(id, usuario) {
         return userData;
 
     } catch (error) {
-
-<<<<<<< RamadeAndres
-        console.error("Error al Eliminar los usuarios", error)
-
-    }
-}
-
-export {deleteUsuarios}  
-=======
         console.error("Error al obtener los usuarios", error)
 
-    }
+
+    } 
 }
+        
 
 export {putUsuarios} 
->>>>>>> main
+
