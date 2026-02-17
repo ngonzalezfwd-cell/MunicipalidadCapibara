@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Viales - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/proyectosViales.css">
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa-solid fa-road"></i> Proyectos Viales</h1>
+        <div class="nav-buttons">
+            <a href="gestionReportes.html" class="nav-btn"><i class="fa-solid fa-clipboard-list"></i> Reportes</a>
+            <a href="admin.html" class="nav-btn"><i class="fa-solid fa-arrow-left"></i> Panel Admin</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2><i class="fa-solid fa-plus-circle"></i> Crear Nuevo Proyecto Vial</h2>
+            <form>
+                <div class="form-group">
+                    <label>Nombre del Proyecto:</label>
+                    <input type="text" required placeholder="Ej: Pavimentación Calle Principal">
+                </div>
+
+                <div class="form-group">
+                    <label>Presupuesto:</label>
+                    <input type="number" required placeholder="$$$">
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de Inicio:</label>
+                    <input type="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de Finalización:</label>
+                    <input type="date" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Descripción:</label>
+                    <textarea required placeholder="Detalles del proyecto..."></textarea>
+                </div>
+
+                <button type="submit"><i class="fa-solid fa-save"></i> Crear Proyecto</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <h2><i class="fa-solid fa-list-check"></i> Lista de Proyectos Viales</h2>
+            <div class="table-responsive">
+                <table border="0"> <!-- Border handled by CSS -->
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Presupuesto</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="proyectosVialesTable">
+                        <!-- Los datos se insertarán aquí por JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- No script src was in original for logic, but I should probably leave one or add if the user had it implicitly? 
+         Wait, checking original file: No script tag was visible in lines 1-62? 
+         Ah, wait, let me check the file content again.
+         Step 17: No script tag at the bottom. But maybe it was cut off? No, "Showing lines 1 to 62... The above content shows the entire, complete file contents".
+         So there is no script linking? 
+         "gestionReportes.html" has "../js/gestionReportes.js".
+         "admin.html" has "../js/devPag.js".
+         "proyectosViales.html" has NO SCRIPT. 
+         Wait, the user says "Active Document: ...admin.html".
+         Maybe the logic is not implemented yet? Or I missed it.
+         I will NOT add a script if there wasn't one, to avoid 404s. But the table body has `id="proyectosVialesTable"`, implying something fills it.
+         Maybe `devPag.js` handles it? But that's in admin.html.
+         I'll stick to NO SCRIPT if original didn't have it, but I see `proyectosVialesTable` ID so it expects one. 
+         Actually, I see `gestionReportes.html` has one. 
+         I will leave it without script for now as I shouldn't invent one if it's not there, unless I see a pattern.
+         However, the user wants "diseño atractivo", so HTML/CSS is priority.
+    -->
+    <!-- If there was a script I missed, I'd include it. But I'll assume standard naming if I had to guess: ../js/proyectosViales.js? 
+         I'll check the directory listing for JS files to be helpful. 
+    -->
+</body>
+
+</html>

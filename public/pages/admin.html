@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Administración - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/admin.css">
 </head>
+
 <body>
-    <div>
-        <h1>Admin Page</h1>
-    </div>
+    <header>
+        <h1><i class="fa-solid fa-user-shield"></i> Panel Administrativo</h1>
+        <a href="home.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>
+    </header>
 
-    <div id="usuariosData"></div>
+    <main>
+        <div class="dashboard-grid">
+            <a href="../pages/gestionReportes.html" class="card">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <h3>Gestionar Reportes</h3>
+                <p>Monitorear y atender reportes ciudadanos.</p>
+            </a>
+            <a href="../pages/proyectosViales.html" class="card">
+                <i class="fa-solid fa-road"></i>
+                <h3>Proyectos Viales</h3>
+                <p>Planificación y estado de obras viales.</p>
+            </a>
+            <a href="../pages/serviciosPublicos.html" class="card">
+                <i class="fa-solid fa-broom"></i>
+                <h3>Servicios Públicos</h3>
+                <p>Gestión de limpieza y mantenimiento urbano.</p>
+            </a>
+        </div>
+    </main>
 
-
-<script type="module" src="../js/devPag.js"></script>
+    <script type="module" src="../js/devPag.js"></script>
 </body>
+
 </html>

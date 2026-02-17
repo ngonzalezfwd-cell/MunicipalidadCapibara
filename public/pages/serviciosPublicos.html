@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Publicos</title>
+    <title>Servicios Públicos - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/serviciosPublicos.css">
 </head>
+
 <body>
-    <div>
-        <h1>Servicios Publicos</h1>
-        <a href="../pages/gestionReportes.html">Volver al Panel de Gestión de Reportes</a>
-        <a href="../pages/admin.html">Volver al Panel de Administración</a>
-    </div>
+    <header>
+        <h1><i class="fa-solid fa-broom"></i> Servicios Públicos</h1>
+        <div class="nav-buttons">
+            <a href="gestionReportes.html" class="nav-btn"><i class="fa-solid fa-clipboard-list"></i> Reportes</a>
+            <a href="admin.html" class="nav-btn"><i class="fa-solid fa-arrow-left"></i> Panel Admin</a>
+        </div>
+    </header>
 
-    <div>
-        <h2>Crear Nuevo Servicio Publico</h2>
+    <main>
+        <div class="container">
+            <h2><i class="fa-solid fa-plus-circle"></i> Crear Nuevo Servicio Público</h2>
+            <form>
+                <div class="form-group">
+                    <label>Nombre del Servicio:</label>
+                    <input type="text" required placeholder="Ej: Recolección de Basura - Sector Norte">
+                </div>
 
-        <form>
-            <label>Nombre del Servicio:</label>
-            <input type="text" required>
+                <div class="form-group">
+                    <label>Presupuesto:</label>
+                    <input type="number" required placeholder="$$$">
+                </div>
 
-            <label>Descripción:</label>
-            <textarea required></textarea>
+                <div class="form-group">
+                    <label>Fecha de Inicio:</label>
+                    <input type="date" required>
+                </div>
 
-            <label>Presupuesto:</label>
-            <input type="number" required>
+                <div class="form-group">
+                    <label>Fecha de Finalización:</label>
+                    <input type="date" required>
+                </div>
 
-            <label>Fecha de Inicio:</label>
-            <input type="date" required>
+                <div class="form-group full-width">
+                    <label>Descripción:</label>
+                    <textarea required placeholder="Detalles del servicio..."></textarea>
+                </div>
 
-            <label>Fecha de Finalización:</label>
-            <input type="date" required>
+                <button type="submit"><i class="fa-solid fa-save"></i> Crear Servicio</button>
+            </form>
+        </div>
+    </main>
 
-            <br><br>
-            <button type="submit">Crear Servicio</button>
-        </form>
-    </div>
-    
 </body>
+
 </html>
