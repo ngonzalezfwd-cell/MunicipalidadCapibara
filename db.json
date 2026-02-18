@@ -30,6 +30,16 @@
       "fecha": "18/2/2026"
     }
   ],
-  "proyectos": [],
+  "proyectos": [
+    {
+      "id": "7483",
+      "nombre": "callevdde",
+      "presupuesto": "4000000",
+      "fechaInicio": "2026-02-19",
+      "fechaFin": "2026-02-27",
+      "descripcion": "gtgmgmggkgkg",
+      "estado": "Planificado"
+    }
+  ],
   "servicios": []
 }

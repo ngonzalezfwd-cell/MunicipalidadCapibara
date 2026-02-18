@@ -1,5 +1,6 @@
 const URL_PROYECTOS = "http://localhost:3001/proyectos";
 
+
 async function getProyectos() {
 
     try {

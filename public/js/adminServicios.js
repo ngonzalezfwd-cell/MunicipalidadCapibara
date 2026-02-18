@@ -1,5 +1,5 @@
 import { getServicios, postServicio, deleteServicio, updateServicio } from "../services/serviceServicios.js";
-import { initDateValidator } from "./dateValidator.js";
+import { fechaValidador } from "./validadorFecha.js";
 
 const formCrearServicio = document.getElementById("formCrearServicio");
 const tablaServicios = document.getElementById("serviciosPublicosTable");
@@ -111,4 +111,4 @@ async function cambiarEstado(id) {
 
 // Inicialización
 mostrarServicios();
-initDateValidator();
+fechaValidador();

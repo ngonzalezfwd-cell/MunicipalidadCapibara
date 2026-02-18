@@ -121,7 +121,7 @@ h2::after {
 }
 
 /* Form Styling */
-form {
+#CrearProyecto {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
@@ -271,7 +271,9 @@ tr:hover td {
 
 /* Action Buttons */
 .btn-estado,
-.btn-eliminar {
+.btn-eliminar, .btn-editar {
+  
+    gap: 0.5rem;
     padding: 0.5rem 0.8rem;
     border-radius: 8px;
     border: none;
@@ -293,6 +295,21 @@ tr:hover td {
 }
 
 .btn-eliminar:hover {
+    filter: brightness(0.9);
+    transform: scale(1.05);
+}
+
+.btn-eliminar {
+    background: #f44336;
+    color: white;
+}
+
+.btn-editar {
+    background: #2196f3;
+    color: white;
+}
+
+.btn-editar:hover {
     filter: brightness(0.9);
     transform: scale(1.05);
 }

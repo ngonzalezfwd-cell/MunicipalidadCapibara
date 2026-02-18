@@ -6,54 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos Viales - Municipalidad Capibara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../styles/proyectosViales.css">
+    <link rel="stylesheet" href="../styles/adminProyectos.css">
     <script src="../js/authGuard.js"></script>
 </head>
 
 <body>
+
     <header>
+
         <h1><i class="fa-solid fa-road"></i> Gestión de Proyectos Viales</h1>
+
         <div class="nav-buttons">
             <a href="admin.html" class="nav-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Panel</a>
             <a href="home.html" class="nav-btn"><i class="fa-solid fa-house"></i> Inicio</a>
         </div>
+
     </header>
 
     <main>
+
         <section class="container">
+
             <h2><i class="fa-solid fa-plus-circle"></i> Crear Nuevo Proyecto</h2>
-            <form id="formCrearProyecto">
+
+            <section id="CrearProyecto">
+
                 <div class="form-group">
+
                     <label for="nombreProyecto">Nombre del Proyecto</label>
                     <input type="text" id="nombreProyecto" placeholder="Ej: Pavimentación Calle Central" required>
                 </div>
+
                 <div class="form-group">
+
                     <label for="presupuestoProyecto">Presupuesto ($)</label>
                     <input type="number" id="presupuestoProyecto" placeholder="Ej: 50000" required>
                 </div>
+
                 <div class="form-group">
+
                     <label for="fechaInicioProyecto">Fecha de Inicio</label>
                     <input type="date" id="fechaInicioProyecto" required>
                 </div>
+
                 <div class="form-group">
+
                     <label for="fechaFinProyecto">Fecha de Finalización (Estimada)</label>
                     <input type="date" id="fechaFinProyecto" required>
                 </div>
+
                 <div class="form-group full-width">
+
                     <label for="descripcionProyecto">Descripción del Proyecto</label>
                     <textarea id="descripcionProyecto" placeholder="Describa los detalles del proyecto..."
-                        required></textarea>
+                    required></textarea>
                 </div>
+
                 <button type="submit" id="btnProyectos">
                     <i class="fa-solid fa-paper-plane"></i> Registrar Proyecto
                 </button>
-            </form>
+
+            </section>
+
         </section>
 
         <section class="container">
+
             <h2><i class="fa-solid fa-list-check"></i> Listado de Proyectos</h2>
+
             <div class="table-responsive">
+
                 <table class="report-table">
+
                     <thead>
                         <tr>
                             <th class="text-center">ID</th>
@@ -66,12 +90,18 @@
                             <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
+
                     <tbody id="proyectosVialesTable">
+
                         <!-- Los proyectos se cargarán aquí -->
                     </tbody>
+
                 </table>
+
             </div>
+
         </section>
+        
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
