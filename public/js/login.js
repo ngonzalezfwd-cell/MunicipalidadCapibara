@@ -5,6 +5,7 @@ const contraseña = document.getElementById("contraseñaUsuario");
 const btnLogin = document.getElementById("btnEnviarLogin");
 
 btnLogin.addEventListener("click", async function () {
+
     const respuesta = await getUsuarios();
 
     if (!respuesta) {
@@ -18,6 +19,7 @@ btnLogin.addEventListener("click", async function () {
     }
 
     if (correo.value.trim() === "" || contraseña.value.trim() === "") {
+
         Swal.fire({
             title: "Error",
             text: "Por favor, complete todos los campos",
@@ -25,6 +27,7 @@ btnLogin.addEventListener("click", async function () {
             confirmButtonText: "Aceptar"
         });
         return;
+
     }
 
     const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
@@ -39,13 +42,16 @@ btnLogin.addEventListener("click", async function () {
             text: "Entraste como Admin",
             icon: "success",
             confirmButtonText: "Aceptar"
+
         }).then(() => {
+
             window.location.href = "../pages/admin.html";
         });
         return;
     }
 
     if (usuarioInicio) {
+
         sessionStorage.setItem("isAdmin", "false");
         sessionStorage.setItem("userRole", "user");
         sessionStorage.setItem("isLoggedIn", "true");
@@ -56,11 +62,16 @@ btnLogin.addEventListener("click", async function () {
             text: "Bienvenido " + usuarioInicio.nombreUsuario,
             icon: "success",
             confirmButtonText: "Aceptar"
+
         }).then(() => {
-            window.location.href = "../pages/usuarioIniciado.html";
+
+            window.location.href = "../pages/home.html";
+
         });
     } else {
+
         Swal.fire({
+
             title: "Error",
             text: "Correo o contraseña incorrectas, por favor intente de nuevo",
             icon: "error",

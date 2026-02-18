@@ -85,7 +85,7 @@ nav {
     padding: 2rem;
 }
 
-.report-box {
+.report-section {
     background: var(--card-bg);
     width: 100%;
     max-width: 600px;
@@ -95,13 +95,13 @@ nav {
     text-align: center;
 }
 
-.report-box h1 {
+.report-section h1 {
     color: var(--primary-dark);
     margin-bottom: 1rem;
     font-size: 2rem;
 }
 
-.report-box p {
+.report-section p {
     color: #666;
     margin-bottom: 2.5rem;
 }
@@ -137,7 +137,7 @@ nav {
     box-shadow: 0 0 0 4px rgba(0, 210, 255, 0.1);
 }
 
-.submit-btn {
+#submit-btn {
     width: 100%;
     padding: 15px;
     border: none;
@@ -155,12 +155,12 @@ nav {
     gap: 10px;
 }
 
-.submit-btn:hover {
+#submit-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 78, 146, 0.3);
 }
 
-.submit-btn:active {
+#submit-btn:active {
     transform: translateY(-1px);
 }
 

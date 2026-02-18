@@ -61,7 +61,7 @@ header h1 {
     gap: 0.5rem;
 }
 
-.back-btn {
+.atras-btn {
     text-decoration: none;
     color: white;
     padding: 0.5rem 1rem;
@@ -160,7 +160,9 @@ tr:hover td {
     text-align: center;
 }
 
-/* Status Badges */
+
+/* Cambiar estado */
+
 [class^="status-"] {
     padding: 0.4rem 0.8rem;
     border-radius: 50px;
@@ -190,9 +192,13 @@ tr:hover td {
     color: #d32f2f;
 }
 
-/* Action Buttons */
+
+
+
+/* Botones */
 .btn-ver,
-.btn-estado {
+.btn-estado,
+.btn-eliminar {
     padding: 0.5rem 0.8rem;
     border-radius: 8px;
     border: none;
@@ -220,5 +226,16 @@ tr:hover td {
 
 .btn-estado:hover {
     background: var(--primary-dark);
+    color: white;
+}
+
+.btn-eliminar {
+    background: var(--danger);
+
+    color: white;
+}
+
+.btn-eliminar:hover {
+    background: #741c1c;
     color: white;
 }

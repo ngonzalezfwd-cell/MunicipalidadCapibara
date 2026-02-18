@@ -4,19 +4,24 @@
  */
 
 export function initDateValidator() {
-    const today = new Date().toISOString().split("T")[0];
+    const minYear = 2026;
+    const minDate = `${minYear}-01-01`;
     const dateInputs = document.querySelectorAll("input[type='date']");
 
     dateInputs.forEach(input => {
-        // Establecer el atributo min para bloquear fechas pasadas en el calendario del navegador
-        input.setAttribute("min", today);
+        // Establecer el atributo min para permitir fechas desde el inicio del año 2026
+        input.setAttribute("min", minDate);
 
-        // Validación extra al cambiar el valor (por si pegan una fecha o usan un navegador antiguo)
+        // Validación extra al cambiar el valor
         input.addEventListener("change", function () {
-            if (this.value < today && this.value !== "") {
+            if (!this.value) return;
+
+            const selectedYear = parseInt(this.value.split("-")[0], 10);
+
+            if (selectedYear < minYear) {
                 Swal.fire({
                     title: "Fecha Inválida",
-                    text: "No puedes seleccionar una fecha pasada.",
+                    text: `El año debe ser ${minYear} o posterior.`,
                     icon: "warning",
                     confirmButtonColor: "#004e92"
                 });
