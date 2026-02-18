@@ -10,11 +10,13 @@ const btnNavAgregar = document.getElementById("btnNavAgregar");
 const btnNavActualizar = document.getElementById("btnNavActualizar");
 const btnNavEliminar = document.getElementById("btnNavEliminar");
 
+
 // Función para cambiar de sección
 function showSection(sectionId) {
     sections.forEach(s => s.style.display = "none");
     document.getElementById(sectionId).style.display = "block";
 
+    
     // Actualizar botón activo
     document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
     const activeBtnId = {
@@ -33,15 +35,22 @@ function showSection(sectionId) {
     if (sectionId === "sectionEliminar") cargarListaEliminar();
 }
 
+
 btnNavMostrar.addEventListener("click", () => showSection("sectionMostrar"));
 btnNavGestion.addEventListener("click", () => showSection("sectionGestion"));
 btnNavAgregar.addEventListener("click", () => showSection("sectionAgregar"));
 btnNavActualizar.addEventListener("click", () => showSection("sectionActualizar"));
 btnNavEliminar.addEventListener("click", () => showSection("sectionEliminar"));
 
+
+
 // --- READ ---
+
+
 async function usuariosEnPantalla() {
+
     try {
+
         const usuarios = await getUsuarios();
         usuariosData.innerHTML = "";
 
@@ -51,6 +60,7 @@ async function usuariosEnPantalla() {
         }
 
         const table = document.createElement("table");
+
         table.className = "admin-table";
         table.innerHTML = `
             <thead>
@@ -63,24 +73,35 @@ async function usuariosEnPantalla() {
             <tbody></tbody>`;
 
         const tbody = table.querySelector("tbody");
+
         usuarios.forEach(usuario => {
+
             const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${usuario.nombreUsuario}</td>
-                <td>${usuario.cedulaUsuario}</td>
-                <td>${usuario.correoUsuario}</td>`;
+
+            tr.innerHTML =    
+                "<td>" + usuario.nombreUsuario + "</td>"
+                "<td>" + usuario.cedulaUsuario + "</td>"
+               "<td>" + usuario.correoUsuario + "</td>";
+
             tbody.appendChild(tr);
         });
+
         usuariosData.appendChild(table);
+
     } catch (error) {
+
         console.error("Error al mostrar usuarios:", error);
         usuariosData.innerHTML = "<p class='error-msg'>Error al cargar los usuarios. Verifica la conexión.</p>";
     }
 }
 
 // --- CREATE ---
+
 const btnGuardarUsuario = document.getElementById("btnGuardarUsuario");
-btnGuardarUsuario.addEventListener("click", async () => {
+
+btnGuardarUsuario.addEventListener("click", async function() {
+
+ {
     const nuevoUsuario = {
         nombreUsuario: document.getElementById("addNombre").value,
         correoUsuario: document.getElementById("addCorreo").value,
@@ -88,27 +109,40 @@ btnGuardarUsuario.addEventListener("click", async () => {
         contraseñaUsuario: document.getElementById("addPass").value
     };
 
+
     if (Object.values(nuevoUsuario).some(v => v === "")) {
         Swal.fire("Error", "Todos los campos son obligatorios", "error");
         return;
     }
 
-    const res = await postUsuarios(nuevoUsuario);
-    if (res) {
-        Swal.fire("Éxito", "Usuario agregado correctamente", "success");
-        showSection("sectionMostrar");
-        document.querySelectorAll("#sectionAgregar input").forEach(i => i.value = "");
+        const res = await postUsuarios(nuevoUsuario);
+
+        if (res) {
+            Swal.fire("Éxito", "Usuario agregado correctamente", "success");
+            showSection("sectionMostrar");
+            document.querySelectorAll("#sectionAgregar input").forEach(i => i.value = "");
+        }
+    
     }
+
 });
 
+
+
+
 // --- UPDATE ---
+
 async function cargarListaActualizar() {
+
     try {
+
         const updateList = document.getElementById("updateList");
+
         const usuarios = await getUsuarios();
         updateList.innerHTML = "";
 
         if (!usuarios || usuarios.length === 0) {
+
             updateList.innerHTML = "<p class='no-data'>No hay usuarios para actualizar.</p>";
             return;
         }
@@ -116,6 +150,7 @@ async function cargarListaActualizar() {
         document.getElementById("editForm").style.display = "none";
 
         const table = document.createElement("table");
+
         table.className = "admin-table";
         table.innerHTML = `
             <thead>
@@ -129,9 +164,12 @@ async function cargarListaActualizar() {
             <tbody></tbody>`;
 
         const tbody = table.querySelector("tbody");
+
         usuarios.forEach(usuario => {
+
             const tr = document.createElement("tr");
             tr.innerHTML = `
+
                 <td>${usuario.nombreUsuario}</td>
                 <td>${usuario.cedulaUsuario}</td>
                 <td>${usuario.correoUsuario}</td>
@@ -140,21 +178,28 @@ async function cargarListaActualizar() {
                         <i class='fa-solid fa-user-pen'></i> Editar
                     </button>
                 </td>`;
+
             tbody.appendChild(tr);
+
         });
+
         updateList.appendChild(table);
+
     } catch (error) {
+
         console.error("Error al cargar lista de actualización:", error);
     }
 }
 
 window.prepararEdicionClick = async (id) => {
+
     const usuarios = await getUsuarios();
     const usuario = usuarios.find(u => u.id === id);
     if (usuario) prepararEdicion(usuario);
 };
 
 function prepararEdicion(usuario) {
+
     document.getElementById("editForm").style.display = "block";
     document.getElementById("editId").value = usuario.id;
     document.getElementById("editNombre").value = usuario.nombreUsuario;
@@ -163,7 +208,18 @@ function prepararEdicion(usuario) {
     document.getElementById("editPass").value = usuario.contraseñaUsuario;
 }
 
-document.getElementById("btnConfirmarActualizar").onclick = async () => {
+document.getElementById("btnConfirmarActualizar").onclick = async function () {
+
+    const editNombre = document.getElementById("editNombre").value;
+    const editCorreo = document.getElementById("editCorreo").value;
+    const editCedula = document.getElementById("editCedula").value;
+    const editPass = document.getElementById("editPass").value;
+
+    if (editNombre.trim() === "" || editCorreo.trim() === "" || editCedula.trim() === "" || editPass.trim() === "") {
+        Swal.fire("Error", "Los campos no pueden estar vacíos", "error");
+        return;
+    }
+
     const result = await Swal.fire({
         title: '¿Estás seguro?',
         text: "¡No podrás revertir esto!",
@@ -184,12 +240,16 @@ document.getElementById("btnConfirmarActualizar").onclick = async () => {
         };
 
         const res = await putUsuarios(id, usuarioEditado);
+
         if (res) {
+
             Swal.fire("Éxito", "Usuario actualizado", "success");
             showSection("sectionMostrar");
         }
     }
 };
+
+
 
 // --- DELETE ---
 async function cargarListaEliminar() {

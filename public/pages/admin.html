@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
@@ -15,40 +14,52 @@
 </head>
 
 <body>
+
     <header>
 
         <div class="header-left">
             <h1><i class="fa-solid fa-user-shield"></i> Panel Administrativo</h1>
         </div>
+
         <nav class="admin-main-nav">
 
-            <button id="btnNavMostrar" class="nav-btn active"><i class="fa-solid fa-users"></i> Usuarios</button>
-            <button id="btnNavGestion" class="nav-btn"><i class="fa-solid fa-layer-group"></i> Gestión</button>
+             <button id="btnNavGestion" class="nav-btn active"><i class="fa-solid fa-layer-group"></i> Gestión</button>
+            <button id="btnNavMostrar" class="nav-btn"><i class="fa-solid fa-users"></i> Usuarios</button>
             <button id="btnNavAgregar" class="nav-btn"><i class="fa-solid fa-user-plus"></i> Nuevo</button>
             <button id="btnNavActualizar" class="nav-btn"><i class="fa-solid fa-user-pen"></i> Editar</button>
             <button id="btnNavEliminar" class="nav-btn"><i class="fa-solid fa-user-minus"></i> Eliminar</button>
+
         </nav>
+
         <div class="header-right">
 
             <button id="cerrarSesionBtn" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i>
                 Salir</button>
         </div>
+
     </header>
 
     <main>
 
         <!-- Sección Mostrar -->
-        <section id="sectionMostrar" class="admin-section">
+
+
+        <section id="sectionMostrar" class="admin-section" style="display:none;">
             <h2>Lista de Usuarios</h2>
+
             <div id="usuariosData"></div>
         </section>
+
+
 
         <!-- Sección Agregar -->
 
         <section id="sectionAgregar" class="admin-section" style="display:none;">
+
             <h2>Agregar Nuevo Usuario</h2>
 
             <div class="form-container">
+
                 <input type="text" id="addNombre" placeholder="Nombre">
                 <input type="email" id="addCorreo" placeholder="Correo">
                 <input type="text" id="addCedula" placeholder="Cédula">
@@ -57,6 +68,7 @@
 
             </div>
         </section>
+
 
         <!-- Sección Actualizar -->
 
@@ -76,12 +88,16 @@
                 <input type="password" id="editPass" placeholder="Contraseña">
 
                 <button id="btnConfirmarActualizar">Confirmar Cambios</button>
+
             </div>
+
         </section>
+
 
         <!-- Sección Gestión -->
 
-        <section id="sectionGestion" class="admin-section" style="display:none;">
+        <section id="sectionGestion" class="admin-section">
+
             <h2>Módulos de Gestión</h2>
 
             <div class="dashboard-grid">
@@ -106,17 +122,21 @@
             </div>
         </section>
 
+
+
         <!-- Sección Eliminar -->
 
         <section id="sectionEliminar" class="admin-section" style="display:none;">
 
             <h2>Eliminar Usuario</h2>
+
             <div id="deleteList"></div>
         </section>
         
     </main>
 
     <script type="module" src="../js/admin.js"></script>
+
 </body>
 
 </html>
