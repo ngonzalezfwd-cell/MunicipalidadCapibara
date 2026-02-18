@@ -1,39 +1,74 @@
 import { getUsuarios } from "../services/serviceUsuarios.js";
-//Intente traer la funcion obtener usuarios pero no podia me daba error 
-//No me cargaba este js cargaba el de functions.js
 
-const correoInput = document.getElementById("correoUsuario");
-const contraseñaInput = document.getElementById("contraseñaUsuario");
-const btnEnviarLogin = document.getElementById("btnEnviarLogin");
+const correo = document.getElementById("correoUsuario");
+const contraseña = document.getElementById("contraseñaUsuario");
+const btnLogin = document.getElementById("btnEnviarLogin");
 
 
-btnEnviarLogin.addEventListener("click", async function () {
+btnLogin.addEventListener("click", async function () {
 
-    const usuarios = await getUsuarios(); 
+    const respuesta = await getUsuarios();
+    
+    const usuarioInicio = respuesta.find(usuario => usuario.correoUsuario === correo.value && usuario.contraseñaUsuario === contraseña.value);
 
-    const correo = correoInput.value;
-    const contraseña = contraseñaInput.value;
-
-    let usuarioEncontrado = null;
-
-    for (let index = 0; index < usuarios.length; index++) {
-        if (
-            usuarios[index].correoUsuario === correo && usuarios[index].contraseñaUsuario === contraseña) {
-
-            usuarioEncontrado = usuarios[index];
-            break;
-
-        }
+    if (correo.value.trim() === "" || contraseña.value.trim() === "") {
+        Swal.fire({
+            title: "Error",
+            text: "Por favor, complete todos los campos",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
     }
 
-    if (usuarioEncontrado) {
-        alert("Login correcto", usuarioEncontrado); //FALTA EL SWEET ALERT
+    if (!respuesta) {
+        Swal.fire({
+            title: "Error",
+            text: "No se pudo conectar con el servidor",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
+    if (correo.value === "gnaomy276@gmail.com" && contraseña.value === "12345678") {
+
+        Swal.fire({
+            title: "¡Bienvenido " + usuarioInicio.nombreUsuario + "!",
+            text: "Entraste como Admin",
+            icon: "success",
+            confirmButtonText: "Aceptar"
+        }).then(() => {
+            window.location.href = "../pages/admin.html";
+        });
+        return;
+    }
+
+    if (usuarioInicio) {
+
+        Swal.fire({
+            title: "¡Login correcto!",
+            text: "Bienvenido " + usuarioInicio.nombreUsuario,
+            icon: "success",
+            confirmButtonText: "Aceptar"
+
+        }).then(() => {
+            window.location.href = "../pages/home.html";
+        });
+
+        
+
     } else {
-        alert("Correo o contraseña incorrectas");
+        
+        Swal.fire({
+            title: "Error",
+            text: "Correo o contraseña incorrectas, por favor intente de nuevo",
+            icon: "error",
+            confirmButtonText: "Aceptar"
+        });
     }
 
-    correoInput.value=""
-    contraseñaInput.value=""
+    contraseña.value = "";
+    correo.value = "";
 });
 
 
