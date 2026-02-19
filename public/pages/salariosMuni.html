@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salarios Municipales | MuniCapibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/salariosMuni.css">
+</head>
+
+<body>
+    <a href="../pages/admin.html" class="back-link">
+        <i class="fa-solid fa-arrow-left"></i> Volver al Panel
+    </a>
+
+    <div class="container">
+        <div class="card-icon">
+            <i class="fa-solid fa-sack-dollar"></i>
+            <h1>Gestión de Salarios</h1>
+            <h3>Planilla Municipal</h3>
+        </div>
+
+        <table class="form-grid">
+            <div class="input-group">
+                <label for="nombreTrabajador">Nombre del trabajador</label>
+                <input type="text" id="nombreTrabajador" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div class="input-group">
+                <label for="puestoTrabajo">Puesto de trabajo</label>
+                <input type="text" id="puestoTrabajo" placeholder="Ej. Ingeniero Civil" required>
+            </div>
+
+            <div class="input-group">
+                <label for="salarioNeto">Salario Neto</label>
+                <input type="number" id="salarioNeto" placeholder="0.00" required>
+            </div>
+
+            <div class="input-group">
+                <label for="salarioBruto">Salario Bruto</label>
+                <input type="number" id="salarioBruto" placeholder="0.00" required>
+            </div>
+
+            <div class="input-group">
+                <label for="rebajos">Rebajos</label>
+                <input type="number" id="rebajos" placeholder="0.00" required>
+            </div>
+
+            <div class="input-group">
+                <label for="tiempo">Tiempo en la Municipalidad (años)</label>
+                <input type="number" id="tiempo" placeholder="Ej. 5" required>
+            </div>
+
+            <div class="input-group">
+                <label for="horas">Horas trabajadas (mensual)</label>
+                <input type="number" id="horas" placeholder="Ej. 160" required>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">
+                    <i class="fa-solid fa-plus"></i> Agregar
+                </button>
+                <button type="button"> <!-- Changed to button type to avoid all summing up as submit -->
+                    <i class="fa-solid fa-pen-to-square"></i> Actualizar
+                </button>
+                <button type="button">
+                    <i class="fa-solid fa-trash"></i> Eliminar
+                </button>
+            </div>
+        </table>
+    </div>
+</body>
+
+</html>
