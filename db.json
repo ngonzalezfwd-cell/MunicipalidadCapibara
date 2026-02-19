@@ -1,57 +1,45 @@
 {
   "usuarios": [
     {
-      "id": "23c0",
-      "nombreUsuario": "Keylor",
-      "correoUsuario": "keylor@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "12345678"
-    },
-    {
-      "id": "f58a",
-      "nombreUsuario": "Keylor",
-      "correoUsuario": "keylor@gmail.com",
-      "contraseñaUsuario": "123456",
-      "cedulaUsuario": "12345678"
-    },
-    {
-      "id": "196b",
-      "nombreUsuario": "David Barrantes Montero",
-      "correoUsuario": "davidcr@icloud.com",
-      "contraseñaUsuario": "keylor15david.",
-      "cedulaUsuario": "604910942"
-    },
-    {
-      "id": "b333",
-      "nombreUsuario": "Carlos Andres JR",
-      "correoUsuario": "jr@gmail.com",
-      "contraseñaUsuario": "1234567",
-      "cedulaUsuario": "1856857"
-    },
-    {
-      "id": "4ba2",
+      "id": "25a2",
       "nombreUsuario": "Naomy",
-      "correoUsuario": "gnaomy276@gmail.com",
-      "contraseñaUsuario": "123456",
+      "correoUsuario": "ngonzalezfwd@gmail.com",
+      "contraseñaUsuario": "12345678",
       "cedulaUsuario": "119960697"
     }
   ],
   "reportes": [
     {
-      "id": "r1",
-      "usuarioId": "23c0",
-      "titulo": "Bache en calle principal",
-      "descripcion": "Hay un bache gigante frente a la entrada de la escuela.",
-      "estado": "Pendiente",
-      "fecha": "2026-02-15"
+      "id": "e599",
+      "userId": "25a2",
+      "titulo": "bache en calle central",
+      "tipo": "Reporte General",
+      "descripcion": "khbhvbkihvl",
+      "ubicacion": "puntarenas",
+      "estado": "Resuelto",
+      "fecha": "18/2/2026"
     },
     {
-      "id": "r2",
-      "usuarioId": "196b",
-      "titulo": "Luminaria apagada",
-      "descripcion": "El poste de luz #456 no enciende por las noches.",
-      "estado": "En Proceso",
-      "fecha": "2026-02-16"
+      "id": "c738",
+      "userId": "25a2",
+      "titulo": "bache",
+      "tipo": "Proyecto Vial",
+      "descripcion": "jfhffhfhfffhf",
+      "ubicacion": "puntarenas",
+      "estado": "Pendiente",
+      "fecha": "18/2/2026"
     }
-  ]
+  ],
+  "proyectos": [
+    {
+      "id": "7483",
+      "nombre": "callevdde",
+      "presupuesto": "4000000",
+      "fechaInicio": "2026-02-19",
+      "fechaFin": "2026-02-27",
+      "descripcion": "gtgmgmggkgkg",
+      "estado": "Planificado"
+    }
+  ],
+  "servicios": []
 }
