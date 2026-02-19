@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reportes - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/adminReportes.css">
+    <script src="../js/authGuard.js"></script>
+    
+</head>
+
+<body>
+
+    <header>
+
+        <h1><i class="fa-solid fa-clipboard-check"></i> Gestión de Reportes</h1>
+        <a href="admin.html" class="atras-btn"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+
+    </header>
+
+    <main>
+
+        <div class="container" id="reportesPanel">
+
+            <h2><i class="fa-solid fa-users"></i> Panel de Control</h2>
+
+            <div class="table-responsive">
+
+                <table class="report-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th class="text-center">ID</th>
+                            <th>Título</th>
+                            <th>Tipo</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Fecha</th>
+                            <th class="text-center">Acciones</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="reportesData">
+
+                        <!-- Los reportes se cargarán aquí -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+            
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/adminReportes.js"></script>
+</body>
+
+</html>

@@ -1,98 +1,87 @@
+// serviceUsuarios.js
 
-//GET 
+const URL_USUARIOS = "http://localhost:3001/usuarios";
+
 
 async function getUsuarios() {
 
     try {
 
-        const response = await fetch("http://localhost:3001/usuarios")
-        const userData = await response.json();
+        const response = await fetch(URL_USUARIOS);
 
-        return userData;
+        if (!response.ok) throw new Error("Error al obtener los usuarios");
+        return await response.json();
 
     } catch (error) {
 
-        console.error("Error al obtener los usuarios", error)
-
+        console.error("Error al obtener los usuarios:", error);
+        return null;
     }
 }
-
-export { getUsuarios }
-
-//POST 
 
 async function postUsuarios(usuario) {
+
     try {
 
-        const response = await fetch("http://localhost:3001/usuarios", {
+        const response = await fetch(URL_USUARIOS, {
+
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuario)
-        })
 
-        const userData = await response.json();
+        });
 
-        return userData;
+        if (!response.ok) throw new Error("Error al crear el usuario");
+        return await response.json();
 
     } catch (error) {
 
-        console.error("Error al obtener los usuarios", error)
-
+        console.error("Error al crear el usuario:", error);
+        return null;
     }
 }
-
-export { postUsuarios }
-
-//PUT
 
 async function putUsuarios(id, usuario) {
+
     try {
 
-        const response = await fetch("http://localhost:3001/usuarios/" + id, {
+        const response = await fetch(URL_USUARIOS + id, {
+
             method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuario)
-        })
 
-        const userData = await response.json();
+        });
 
-        return userData;
+        if (!response.ok) throw new Error("Error al actualizar el usuario");
+        return await response.json();
 
     } catch (error) {
 
-        console.error("Error al actualizar los usuarios", error)
+        console.error("Error al actualizar el usuario:", error);
+        return null;
 
     }
 }
-
-export { putUsuarios }
-
-//DELETE
 
 async function deleteUsuarios(id) {
+
     try {
 
-        const response = await fetch("http://localhost:3001/usuarios/" + id, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(id)
-        })
+        const response = await fetch(URL_USUARIOS + id, {
 
-        const userData = await response.json();
+            method: "DELETE"
 
-        return userData;
+        });
+
+        if (!response.ok) throw new Error("Error al eliminar el usuario");
+        return true;
 
     } catch (error) {
-
-        console.error("Error al Eliminar los usuarios", error)
-
+        
+        console.error("Error al eliminar el usuario:", error);
+        return false;
     }
 }
 
-export { deleteUsuarios }  
+export { getUsuarios, postUsuarios, putUsuarios, deleteUsuarios };

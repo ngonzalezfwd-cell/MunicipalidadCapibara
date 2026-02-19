@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Reportes - Municipalidad Capibara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/misReportes.css">
+    <script src="../js/authGuard.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-file-list"></i> Mis Reportes</h1>
+        <div class="nav-buttons">
+            <a href="usuarioReporte.html" class="nav-btn primary"><i class="fa-solid fa-plus"></i> Nuevo Reporte</a>
+            <a href="home.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2><i class="fa-solid fa-clock-rotate-left"></i> Historial de Reportes</h2>
+            <div class="table-responsive">
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th>Título</th>
+                            <th>Tipo</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="misReportesData">
+                        <!-- Los reportes se cargarán aquí -->
+                    </tbody>
+                </table>
+                <div id="noReportsMessage" class="no-reports" style="display: none;">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <p>Aún no has realizado ningún reporte.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/misReportes.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-/* serviciosPublicos.css */
+/* proyectosViales.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
@@ -8,6 +8,8 @@
     --bg-light: #f0f4f8;
     --card-bg: rgba(255, 255, 255, 0.95);
     --text-dark: #333333;
+    --table-header: #004e92;
+    --table-row-even: #f9f9f9;
 }
 
 * {
@@ -119,7 +121,7 @@ h2::after {
 }
 
 /* Form Styling */
-form {
+#CrearProyecto {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
@@ -175,9 +177,8 @@ button[type="submit"] {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s;
-    justify-self: center;
-    width: 100%;
-    max-width: 400px;
+    justify-self: start;
+    min-width: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -216,6 +217,7 @@ th {
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 1px;
+    border: none;
 }
 
 td {
@@ -267,9 +269,19 @@ tr:hover td {
     color: #d32f2f;
 }
 
+/* Action Buttons Container */
+td:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
 /* Action Buttons */
 .btn-estado,
-.btn-eliminar {
+.btn-eliminar,
+.btn-editar {
     padding: 0.5rem 0.8rem;
     border-radius: 8px;
     border: none;
@@ -277,7 +289,7 @@ tr:hover td {
     font-size: 0.85rem;
     font-weight: 600;
     transition: all 0.3s;
-    margin: 0 0.2rem;
+    white-space: nowrap;
 }
 
 .btn-estado {
@@ -295,6 +307,22 @@ tr:hover td {
     transform: scale(1.05);
 }
 
+.btn-eliminar {
+    background: #f44336;
+    color: white;
+}
+
+.btn-editar {
+    background: #2196f3;
+    color: white;
+}
+
+.btn-editar:hover {
+    filter: brightness(0.9);
+    transform: scale(1.05);
+}
+
+/* Responsive Form */
 @media (max-width: 768px) {
     form {
         grid-template-columns: 1fr;
