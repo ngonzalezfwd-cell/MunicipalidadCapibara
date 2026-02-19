@@ -267,9 +267,20 @@ tr:hover td {
     color: #d32f2f;
 }
 
+/* Action Buttons Container */
+td:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
 /* Action Buttons */
+.btn-ver,
 .btn-estado,
-.btn-eliminar {
+.btn-eliminar,
+.btn-editar {
     padding: 0.5rem 0.8rem;
     border-radius: 8px;
     border: none;
@@ -277,7 +288,7 @@ tr:hover td {
     font-size: 0.85rem;
     font-weight: 600;
     transition: all 0.3s;
-    margin: 0 0.2rem;
+    white-space: nowrap;
 }
 
 .btn-estado {
@@ -290,7 +301,32 @@ tr:hover td {
     color: white;
 }
 
+.btn-eliminar {
+    background: #ff1717;
+    color: white;
+}
+
 .btn-eliminar:hover {
+    filter: brightness(0.9);
+    transform: scale(1.05);
+}
+
+.btn-ver {
+    background: #f0f4f8;
+    color: var(--primary);
+}
+
+.btn-ver:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-editar {
+    background: #0080ff;
+    color: white;
+}
+
+.btn-editar:hover {
     filter: brightness(0.9);
     transform: scale(1.05);
 }
