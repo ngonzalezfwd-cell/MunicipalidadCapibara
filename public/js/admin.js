@@ -16,7 +16,7 @@ function showSection(sectionId) {
     sections.forEach(s => s.style.display = "none");
     document.getElementById(sectionId).style.display = "block";
 
-    
+
     // Actualizar botón activo
     document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
     const activeBtnId = {
@@ -78,10 +78,10 @@ async function usuariosEnPantalla() {
 
             const tr = document.createElement("tr");
 
-            tr.innerHTML =    
-                "<td>" + usuario.nombreUsuario + "</td>"
-                "<td>" + usuario.cedulaUsuario + "</td>"
-               "<td>" + usuario.correoUsuario + "</td>";
+            tr.innerHTML =
+                "<td>" + usuario.nombreUsuario + "</td>" +
+                "<td>" + usuario.cedulaUsuario + "</td>" +
+                "<td>" + usuario.correoUsuario + "</td>";
 
             tbody.appendChild(tr);
         });
@@ -99,21 +99,21 @@ async function usuariosEnPantalla() {
 
 const btnGuardarUsuario = document.getElementById("btnGuardarUsuario");
 
-btnGuardarUsuario.addEventListener("click", async function() {
+btnGuardarUsuario.addEventListener("click", async function () {
 
- {
-    const nuevoUsuario = {
-        nombreUsuario: document.getElementById("addNombre").value,
-        correoUsuario: document.getElementById("addCorreo").value,
-        cedulaUsuario: document.getElementById("addCedula").value,
-        contraseñaUsuario: document.getElementById("addPass").value
-    };
+    {
+        const nuevoUsuario = {
+            nombreUsuario: document.getElementById("addNombre").value,
+            correoUsuario: document.getElementById("addCorreo").value,
+            cedulaUsuario: document.getElementById("addCedula").value,
+            contraseñaUsuario: document.getElementById("addPass").value
+        };
 
 
-    if (Object.values(nuevoUsuario).some(v => v === "")) {
-        Swal.fire("Error", "Todos los campos son obligatorios", "error");
-        return;
-    }
+        if (Object.values(nuevoUsuario).some(v => v === "")) {
+            Swal.fire("Error", "Todos los campos son obligatorios", "error");
+            return;
+        }
 
         const res = await postUsuarios(nuevoUsuario);
 
@@ -122,7 +122,7 @@ btnGuardarUsuario.addEventListener("click", async function() {
             showSection("sectionMostrar");
             document.querySelectorAll("#sectionAgregar input").forEach(i => i.value = "");
         }
-    
+
     }
 
 });
