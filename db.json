@@ -41,15 +41,5 @@
       "estado": "Planificado"
     }
   ],
-  "servicios": [
-    {
-      "id": "6ff9",
-      "nombre": "ffff",
-      "presupuesto": "3333333",
-      "fechaInicio": "2026-02-20",
-      "fechaFin": "2026-02-26",
-      "descripcion": "eddddd",
-      "estado": "Planificado"
-    }
-  ]
+  "servicios": []
 }
